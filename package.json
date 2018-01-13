@@ -87,7 +87,7 @@
   },
   "scripts": {
     "lint": "eslint ./src/**/*.{js,jsx}",
-    "test": "jest --env=jsdom --coverage test -- -u",
+    "test": "jest --env=jsdom --coverage -u test",
     "test:watch": "npm run test -- --watch",
     "prebuild": "npm run test && npm run lint && rimraf build",
     "build": "NODE_ENV=production babel src/ --out-dir build/ --ignore '**/tests'",

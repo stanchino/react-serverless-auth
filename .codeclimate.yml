@@ -1,0 +1,23 @@
+languages:
+  JavaScript: true
+
+engines:
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - javascript:
+  fixme:
+    enabled: true
+  eslint:
+    enabled: true
+
+ratings:
+   paths:
+    - "src/**"
+
+exclude_paths:
+  - "node_modules/"
+  - "**/*.snap"
+  - "coverage/**/*"
+  - ".idea/"

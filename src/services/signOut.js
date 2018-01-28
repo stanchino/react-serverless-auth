@@ -1,4 +1,4 @@
-export default (user) => (
+export default user => (
     new Promise((resolve, reject) => {
         user.globalSignOut({
             onSuccess: result => {

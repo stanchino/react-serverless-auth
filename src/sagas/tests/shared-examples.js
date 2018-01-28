@@ -1,6 +1,8 @@
 import { call, put, select } from "redux-saga/effects";
 import { SubmissionError } from "redux-form";
+import { replace } from "react-router-redux";
 import sagaHelper from "redux-saga-testing";
+
 import { signUpRoutine } from "../../actions";
 
 export const setupSaga = (saga, payload, routine, beforeRequest, requestPayload) => {
@@ -61,4 +63,16 @@ export const testServiceFailure = (initialize, request, routine, args, finalPayl
 
 export const testSignUpSuccess = (result, email) => {
     expect(result).toEqual(put(signUpRoutine.success(email)));
+};
+
+export const verifyUnconfirmedAction = (it, values, routine) => {
+    it("and then triggers a signUp success action", result => {
+        expect(result).toEqual(put(signUpRoutine.success({ profile: values, flash: { error: "UserNotConfirmedException" }, pathname: "/path" })));
+    });
+
+    it("then redirects to the confirmRegistration page", result => {
+        expect(result).toEqual(put(replace("/auth/confirm")));
+    });
+
+    finalizeSaga(it, routine);
 };

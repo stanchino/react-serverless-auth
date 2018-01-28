@@ -3,19 +3,30 @@ import { SubmissionError } from "redux-form";
 
 import { routinePromiseWatcherSaga } from "redux-saga-routines";
 
-import { signUpRoutine, confirmationRoutine, signInRoutine, authRoutine, signOutRoutine } from "../actions";
+import {
+    authRoutine,
+    confirmRegistrationRoutine,
+    passwordResetConfirmRoutine,
+    passwordResetRequestRoutine,
+    signInRoutine,
+    signOutRoutine,
+    signUpRoutine
+} from "../actions";
+
 import { handleSignUpSaga } from "./signUp";
-import { handleConfirmationSaga } from "./confirmation";
+import { handleConfirmRegistrationSaga } from "./confirmRegistration";
 import { handleSignInSaga } from "./signIn";
 import { handleAuthSaga } from "./auth";
 import { handleSignOutSaga } from "./signOut";
+import { handlePasswordResetRequestSaga } from "./passwordResetRequest";
+import { handlePasswordResetConfirmSaga } from "./passwordResetConfirm";
 
 export function* signUpWatcher() {
     yield takeEvery(signUpRoutine.TRIGGER, handleSignUpSaga);
 }
 
-export function* confirmationWatcher() {
-    yield takeEvery(confirmationRoutine.TRIGGER, handleConfirmationSaga);
+export function* confirmRegistrationWatcher() {
+    yield takeEvery(confirmRegistrationRoutine.TRIGGER, handleConfirmRegistrationSaga);
 }
 
 export function* signInWatcher() {
@@ -30,8 +41,25 @@ export function* signOutWatcher() {
     yield takeEvery(signOutRoutine.TRIGGER, handleSignOutSaga);
 }
 
+export function* passwordResetRequestWatcher() {
+    yield takeEvery(passwordResetRequestRoutine.TRIGGER, handlePasswordResetRequestSaga);
+}
+
+export function* passwordResetConfirmWatcher() {
+    yield takeEvery(passwordResetConfirmRoutine.TRIGGER, handlePasswordResetConfirmSaga);
+}
+
 export const formError = (action, errors) => (
     put(action.failure(new SubmissionError(errors)))
 );
 
-export default [routinePromiseWatcherSaga, signUpWatcher, confirmationWatcher, signInWatcher, authWatcher, signOutWatcher];
+export default [
+    routinePromiseWatcherSaga,
+    authWatcher,
+    confirmRegistrationWatcher,
+    passwordResetConfirmWatcher,
+    passwordResetRequestWatcher,
+    signInWatcher,
+    signOutWatcher,
+    signUpWatcher
+];

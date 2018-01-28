@@ -1,15 +1,19 @@
-import signUpRequest from "./signUp";
-import confirmationRequest from "./confirmation";
-import signInRequest from "./signIn";
 import authRequest from "./auth";
+import confirmRegistrationRequest from "./confirmRegistration";
+import passwordResetRequest from "./passwordResetRequest";
+import passwordResetConfirm from "./passwordResetConfirm";
+import signInRequest from "./signIn";
 import signOutRequest from "./signOut";
+import signUpRequest from "./signUp";
 import userAttributes from "./userAttributes";
 
 export {
-    signUpRequest,
-    confirmationRequest,
-    signInRequest,
     authRequest,
-    userAttributes,
-    signOutRequest
+    confirmRegistrationRequest,
+    passwordResetConfirm,
+    passwordResetRequest,
+    signInRequest,
+    signUpRequest,
+    signOutRequest,
+    userAttributes
 }

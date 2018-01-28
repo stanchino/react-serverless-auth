@@ -1,8 +1,12 @@
 node_modules
+config
+.idea
 **/tests
+src
 .babelrc
 .editorconfig
 .eslintrc
 .gitignore
 .travis.yml
 .codeclimate.yml
+.env*

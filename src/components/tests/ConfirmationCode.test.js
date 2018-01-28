@@ -1,6 +1,6 @@
 import { ConfirmationCode } from "../..";
 
-import { matchFormSnapshot } from "./sharedExamples";
+import { matchFormSnapshot } from "./shared-examples";
 
 describe("ConfirmationCode", () => {
     it("matches the snapshot", () => {

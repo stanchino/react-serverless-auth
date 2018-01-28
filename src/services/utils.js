@@ -1,8 +1,8 @@
 import { CognitoUserPool, CognitoUser } from "amazon-cognito-identity-js"
 
 export const userPool = new CognitoUserPool({
-    UserPoolId: process.env.REACT_APP_COGNITO_USER_POOL_ID || "test_pool",
-    ClientId: process.env.REACT_APP_COGNITO_CLIENT_ID || "test"
+    UserPoolId: process.env.REACT_APP_COGNITO_USER_POOL_ID || 'us-east-1_fake',
+    ClientId: process.env.REACT_APP_COGNITO_CLIENT_ID || 'client'
 });
 
 export const cognitoUser = username => {

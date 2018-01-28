@@ -1,16 +1,15 @@
 import { call, put } from "redux-saga/effects";
-import { replace } from "react-router-redux";
-import { signInRoutine, signUpRoutine, authRoutine } from "../../actions";
+import { signInRoutine, authRoutine } from "../../actions";
 import { signInRequest } from "../../services";
-import { handleSignInSaga, location } from "../signIn";
+import { handleSignInSaga, routerSelector } from "../signIn";
 
-import { finalizeSaga, setupSelectSaga, testServiceFailure, testSelector } from "./sharedExamples";
+import { setupSelectSaga, testServiceFailure, testSelector, verifyUnconfirmedAction } from "./shared-examples";
 
 const values = { email: "user", password: "pass" };
 const payload = { payload: { values: values } };
 
 const initializeSaga = () => (
-    setupSelectSaga(handleSignInSaga, payload, signInRoutine, location, { pathname: '/path' }, { profile: values })
+    setupSelectSaga(handleSignInSaga, payload, signInRoutine, routerSelector, { location: { pathname: '/path' } }, { profile: values })
 );
 
 describe("handleSignInSaga", () => {
@@ -46,18 +45,21 @@ describe("handleSignInSaga", () => {
             return error;
         });
 
+        verifyUnconfirmedAction(it, values, signInRoutine);
+        /*
         it("and then triggers a signUp success action", result => {
             expect(result).toEqual(put(signUpRoutine.success({ profile: values, flash: { error: "UserNotConfirmedException" }, pathname: "/path" })));
         });
 
-        it("then redirects to the confirmation page", result => {
+        it("then redirects to the confirmRegistration page", result => {
             expect(result).toEqual(put(replace("/auth/confirm")));
         });
 
         finalizeSaga(it, signInRoutine);
+        */
     });
 
     testServiceFailure(initializeSaga, signInRequest, signInRoutine, [values.email, values.password]);
 });
 
-testSelector(location, { router: { location: { pathname: "path" } } }, { pathname: "path" });
+testSelector(routerSelector, { router: { location: { pathname: "path" } } }, { location: { pathname: "path" } });

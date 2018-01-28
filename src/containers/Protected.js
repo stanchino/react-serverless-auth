@@ -1,8 +1,5 @@
 import { connect } from "react-redux";
-
-const componentOrNull = (component) => (
-    component ? component : null
-);
+import { componentOrNull } from "../helpers";
 
 const ProtectedComponent = ({ isLoggedIn, children, component }) => (
     isLoggedIn ? children : componentOrNull(component)

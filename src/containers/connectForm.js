@@ -9,10 +9,6 @@ const mapStateToProps = state => ({
     isRegistered: state.auth.isRegistered
 });
 
-export const connectComponent = props => component => (
-    reduxForm({ propNamespace: 'form', ...props })(connect(mapStateToProps)(component))
-);
-
-export const connectedForm = props => (
-    connectComponent(props)(Form)
+export const connectForm = props => (
+    reduxForm({ propNamespace: 'form', ...props })(connect(mapStateToProps)(Form))
 );

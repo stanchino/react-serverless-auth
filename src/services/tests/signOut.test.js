@@ -1,15 +1,15 @@
 import signOutRequest from "../signOut";
 
-const handlesResponse = (method, result, exected_method) => {
-    expect(signOutRequest({
+const request = (method, result) => (
+    signOutRequest({
         globalSignOut: callback => callback[method](result),
         signOut: jest.fn(),
         clearCachedTokens: jest.fn(),
         clearCachedDeviceKeyAndPassword:jest.fn()
-    }))[exected_method].toEqual(result);
-}
+    })
+);
 
 describe("test signOutRequest", () => {
-    it ('when the response is successful', () => handlesResponse('onSuccess', 'success', 'resolves'));
-    it ('when the response is an error', () =>  handlesResponse('onFailure', 'error', 'rejects'));
+    it ('when the response is successful', () => expect(request('onSuccess', 'success')).resolves.toEqual('success'));
+    it ('when the response is an error', () =>  expect(request('onFailure', 'error')).rejects.toEqual('error'));
 });

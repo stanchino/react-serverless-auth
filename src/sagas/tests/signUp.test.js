@@ -6,7 +6,7 @@ import { signUpRoutine, signInRoutine } from "../../actions";
 
 import { handleSignUpSaga } from "../signUp";
 
-import { finalizeSaga, setupSaga, testServiceFailure, testSignUpSuccess } from "./sharedExamples";
+import { finalizeSaga, setupSaga, testServiceFailure, testSignUpSuccess } from "./shared-examples";
 
 const values = { email: "john@doe.com", password: "pass" };
 const payload = { payload: { values: values } };
@@ -27,7 +27,7 @@ describe("handleSignUpSaga", () => {
             testSignUpSuccess(result, { profile: { email: values.email, password: values.password } });
         });
 
-        it("then redirects to the confirmation URL", result => {
+        it("then redirects to the confirmRegistration URL", result => {
             expect(result).toEqual(put(replace("/auth/confirm")));
         });
 

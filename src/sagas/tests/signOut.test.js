@@ -1,13 +1,12 @@
 import { call } from "redux-saga/effects";
 import { signOutRoutine } from "../../actions";
 import { signOutRequest } from "../../services";
-import { handleSignOutSaga, getUser } from "../signOut";
+import { handleSignOutSaga, authSelector } from "../signOut";
 
-import { finalizeSaga, setupSelectSaga, testSelector} from "./sharedExamples";
-
+import { finalizeSaga, setupSelectSaga, testSelector} from "./shared-examples";
 
 const initializeSaga = user => (
-    setupSelectSaga(handleSignOutSaga, {}, signOutRoutine, getUser, user)
+    setupSelectSaga(handleSignOutSaga, {}, signOutRoutine, authSelector, { user: user })
 );
 
 describe("handleSignOutSaga", () => {
@@ -29,4 +28,4 @@ describe("handleSignOutSaga", () => {
     });
 });
 
-testSelector(getUser, { auth: { user: 'user' } }, 'user');
+testSelector(authSelector, { auth: { user: 'user' } }, { user: 'user' });

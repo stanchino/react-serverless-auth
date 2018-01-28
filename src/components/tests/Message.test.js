@@ -1,4 +1,4 @@
-import { matchSnapshot } from "./sharedExamples";
+import { matchSnapshot } from "./shared-examples";
 
 import Message from "../Message";
 

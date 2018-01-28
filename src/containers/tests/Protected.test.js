@@ -8,9 +8,9 @@ import { Protected }  from "..";
 const mockStore = configureStore();
 
 const childComponent = (<div/>);
-const signInForm = (<form/>);
+const SignInForm = () => (<form/>);
 
-const subject = (store, component = signInForm) => (
+const subject = (store, component = SignInForm) => (
     mount(<Provider store={store}><Protected component={component}>{childComponent}</Protected></Provider>)
 );
 
@@ -19,11 +19,11 @@ describe("Protected Component", () => {
         const store = mockStore({ auth: { isLoggedIn: false } });
 
         it('and the component is not null', () => {
-            expect(subject(store)).toContainReact(signInForm);
+            expect(subject(store)).toContainReact(<SignInForm/>);
         });
 
         it('and the component is null', () => {
-            expect(subject(store, null)).not.toContainReact(signInForm);
+            expect(subject(store, null)).not.toContainReact(<SignInForm/>);
         })
     });
 

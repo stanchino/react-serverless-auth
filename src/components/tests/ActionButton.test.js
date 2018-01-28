@@ -1,7 +1,7 @@
-import { matchSnapshot } from "./sharedExamples";
+import { matchSnapshot } from "./shared-examples";
 
 import { ActionButton } from "..";
 
 describe("ActionButton", () => {
-    it("matches the snapshot", () => matchSnapshot(ActionButton, { form: { submitting: false } }));
+    it("matches the snapshot", () => matchSnapshot(ActionButton));
 });

@@ -1,5 +1,8 @@
 import reducer, { initialState } from "../auth";
-import { signUpRoutine, confirmationRoutine, signInRoutine, authRoutine, signOutRoutine } from "../../actions";
+import {
+    signUpRoutine, confirmRegistrationRoutine, signInRoutine, authRoutine, signOutRoutine,
+    passwordResetRequestRoutine
+} from "../../actions";
 
 const testAction = (reducer, action, expectedState) => {
     it(`should handle ${action.type}`, () => {
@@ -43,8 +46,9 @@ const behavesLikeReducerWithoutPayload = (routine, success, failure) => {
 describe("auth reducer", () => {
     it("should return the initial state", () => expect(reducer(undefined, {})).toEqual(initialState));
     describe("for the signUpRoutine", () => behavesLikeReducerWithPayload(signUpRoutine, { isRegistered: true }, { isRegistered: false }));
-    describe("for the confirmationRoutine", () => behavesLikeReducerWithoutPayload(confirmationRoutine, {}, {}));
-    describe("for the signUpRoutine", () => behavesLikeReducerWithPayload(signInRoutine, { isRegistered: true }, {}));
+    describe("for the passwordResetRequestRoutine", () => behavesLikeReducerWithPayload(passwordResetRequestRoutine, { passwordResetRequested: true }, { passwordResetRequested: false }));
+    describe("for the confirmRegistrationRoutine", () => behavesLikeReducerWithoutPayload(confirmRegistrationRoutine, {}, {}));
+    describe("for the signInRoutine", () => behavesLikeReducerWithPayload(signInRoutine, { isRegistered: true }, {}));
     describe("for the authRoutine", () => behavesLikeReducerWithPayload(authRoutine, { isLoggedIn: true, isRegistered: true }, { isLoggedIn: false }, { loading: true }));
     describe("for the signOutRoutine", () => {
         testAction(reducer, signOutRoutine.request(), {

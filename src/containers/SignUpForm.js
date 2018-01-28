@@ -1,12 +1,4 @@
-import React from "react";
-
-import { connectedForm } from "./AuthForm";
+import { connectForm } from "./connectForm";
 import { signUp } from "../actions";
 
-const ConnectedForm = connectedForm({ form: "signUp", onSubmit: signUp});
-
-export default ({ children, ...props }) => (
-    <ConnectedForm {...props}>
-        {children}
-    </ConnectedForm>
-)
+export default connectForm({ form: "signUp", onSubmit: signUp});

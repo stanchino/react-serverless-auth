@@ -1,10 +1,9 @@
-import { connect } from "react-redux";
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { Unauthenticated } from ".";
 
-const LoginLink = ({ children, loading, isLoggedIn }) => (
-    loading || isLoggedIn ? null : children
+export default props => (
+    <Unauthenticated>
+        <NavLink {...props} />
+    </Unauthenticated>
 );
-
-export default connect(state => ({
-    loading: state.auth.loading,
-    isLoggedIn: state.auth.isLoggedIn,
-}), () => ({}))(LoginLink);

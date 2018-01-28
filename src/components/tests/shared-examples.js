@@ -4,11 +4,11 @@ import renderer from "react-test-renderer";
 import createStore from "redux-mock-store";
 
 import { initialState } from "../../reducers/auth";
-import { connectedForm } from "../../containers/AuthForm";
+import { connectForm } from "../../containers/connectForm";
 
 const mockStore = createStore();
 const store = mockStore({ auth: initialState });
-const Form = connectedForm({ form: "test", onSubmit: jest.fn() });
+const Form = connectForm({ form: "test", onSubmit: jest.fn() });
 
 export const matchFormSnapshot = Component => expect(renderer.create(
     <Provider store={store}>

@@ -1,4 +1,11 @@
 {
-  "plugins": ["transform-react-jsx"],
-  "presets": ["es2015", "stage-0"]
+  "presets": ["env"],
+  "plugins": [
+    "transform-object-rest-spread",
+    "transform-react-jsx",
+    ["transform-runtime", {
+      "polyfill": false,
+      "regenerator": true
+    }]
+  ]
 }

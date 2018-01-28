@@ -3,7 +3,7 @@ import { authRoutine } from "../../actions";
 import { authRequest, userAttributes } from "../../services";
 
 import { handleAuthSaga, getUser } from "../auth";
-import { setupSelectSaga, testSelector, finalizeSaga } from "./sharedExamples";
+import { setupSelectSaga, testSelector, finalizeSaga } from "./shared-examples";
 
 const authSuccess = result => {
     expect(result).toEqual(put(authRoutine.success({ user: "user", profile: "profile" })));

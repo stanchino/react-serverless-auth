@@ -1,6 +1,6 @@
 {
   "name": "react-serverless-auth",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Implement Amazon Cognito authentication in a React application",
   "keywords": [
     "react",

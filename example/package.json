@@ -1,0 +1,26 @@
+{
+  "name": "react-serverless-auth-example",
+  "version": "1.0.0",
+  "private": false,
+  "license": "MIT",
+  "description": "An example implementation of react-serverless-auth React Components",
+  "keywords": [
+    "react",
+    "serverless",
+    "auth",
+    "example",
+    "amazon",
+    "aws",
+    "cognito"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stanchino/react-serverless-auth/example"
+  },
+  "dependencies": {
+    "history": "^4.7.2",
+    "react-router": "^4.2.0",
+    "react-serverless-auth": "file:.."
+  },
+  "scripts": {}
+}

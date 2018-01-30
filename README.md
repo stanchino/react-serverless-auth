@@ -7,3 +7,39 @@
 [![dependencies Status](https://david-dm.org/stanchino/react-serverless-auth/status.svg)](https://david-dm.org/stanchino/react-serverless-auth)
 [![devDependencies Status](https://david-dm.org/stanchino/react-serverless-auth/dev-status.svg)](https://david-dm.org/stanchino/react-serverless-auth?type=dev)
 [![peerDependencies Status](https://david-dm.org/stanchino/react-serverless-auth/peer-status.svg)](https://david-dm.org/stanchino/react-serverless-auth?type=peer)
+
+## Installation
+
+```bash
+$ npm install react-serverless-auth
+```
+
+or
+
+```bash
+$ yarn install react-serverless-auth
+```
+
+## Example
+
+```bash
+$ npm run example
+```
+
+or
+
+```bash
+$ yarn example
+```
+
+## Tests
+
+```bash
+$ npm test
+```
+
+or
+
+```bash
+$ yarn test
+```

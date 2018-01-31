@@ -20,7 +20,7 @@
   "dependencies": {
     "history": "^4.7.2",
     "react-router": "^4.2.0",
-    "react-serverless-auth": "cd *"
+    "react-serverless-auth": "file:.."
   },
   "scripts": {}
 }

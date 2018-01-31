@@ -5,7 +5,7 @@ import { routerMiddleware } from "react-router-redux";
 import rootReducer from "../reducers";
 import rootSagas from "../sagas";
 
-import { authRoutine } from "react-serverless-auth";
+import { authRoutine } from "react-serverless-auth/dist/actions";
 
 export default history => {
     const sagaMiddleware = createSagaMiddleware();

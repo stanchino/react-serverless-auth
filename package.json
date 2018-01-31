@@ -36,7 +36,6 @@
     "jest": "^22.1.4",
     "jest-cli": "^21.2.1",
     "jest-enzyme": "^4.0.2",
-    "npm-run-all": "^4.1.2",
     "react-scripts": "^1.1.0",
     "rimraf": "^2.6.2"
   },
@@ -85,7 +84,7 @@
     "eslint": "eslint ./src/**/*.{js,jsx}",
     "test": "react-scripts test --env=jsdom --coverage -u",
     "build": "babel src --out-dir dist --ignore **/tests/*,spec.js,test.js,setupTests.js",
-    "prepare": "run-s eslint test clean build",
+    "prepare": "npm run eslint && npm test && npm run clean && npm run build",
     "example": "cd example && react-scripts start"
   }
 }

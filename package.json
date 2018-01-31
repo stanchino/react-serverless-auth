@@ -83,8 +83,8 @@
     "clean": "rimraf dist",
     "eslint": "eslint ./src/**/*.{js,jsx}",
     "test": "npm run eslint && react-scripts test --env=jsdom --coverage -u",
-    "build": "babel src --out-dir dist --ignore **/tests/*,spec.js,test.js,setupTests.js",
-    "prepare": "npm run clean && npm run build",
+    "build": "npm run clean && babel src --out-dir dist --ignore **/tests/*,spec.js,test.js,setupTests.js",
+    "prepublishOnly": "npm run build",
     "example": "cd example && react-scripts start"
   }
 }

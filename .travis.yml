@@ -8,25 +8,23 @@ cache:
   yarn: true
   directories:
     - node_modules
-jobs:
-  include:
-    - stage: test
-      before_script:
-        - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-        - chmod +x ./cc-test-reporter
-        - "./cc-test-reporter before-build"
-      script:
-        - npm run eslint
-        - npm test
-      after_script:
-        - "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
-    - stage: deploy
-      deploy:
-        skip_cleanup: true
-        provider: npm
-        email: stanchino@gmail.com
-        api_key:
-          secure: hofYjWF7pK3e2d+ImWAdvbK1jtmfCvj2cWTwwgN8vO5u1KDHLybvcjh/ncvblHicNZ0/3GdNJ5aKmFBtqSTnZ8WqEab1iv5nACHDRX6yfBXUSTi12JrD6mEvWjqU56RzWCLNgpT9rPwcMPRsfVHNz4Qt9LnqqS8EVGRxxJ9O6u/l3tuAc5gpzHxQmxi7h7qwItc9VwRgvD+lmIfcYah983pqmltLPCNn4jy/A7OgObBQsMedPIyvSP89z/FrdYZgH3Tvl0EqeS8btq4vORvXlan28ClpnCZ4fig4t/uSk3WZvz0cYhSvg16zWPPGKCYDeTPTPt5MnNEpZbUYx5edi8kPJ7fYq8GbD6bkQj2Uia2rHPgMx1kfQ/PQvJF4rhiQd4NfZBKZjPuq678aUgF8IhPo7d0rZ6JZKGPOb6wyII0zmoueCEC8KHM91YJVyvy68Hd9Z9F9yzrzUA53TLW5dbhsIFGJv+QQASxQa4N6XBPC6kTcHvTLh/Hooa8S7rvXT2yBM8rmUze+DqCXwyrGE6wgFc9uB/7hUdi/sF0VSNw1gqiEanEHz7ozYg0EMuh3tvSVKhDmIISrbcqU0Iua95TjLF9PG2v5dyBlrozFoRoJvVsGUOxaQkTv8gN+zCCtwUo20qyrU3uAkAUt7EjzZpph7plo5mtAA0+z0Idz5c0=
-        on:
-          branch: master
-          repo: stanchino/react-serverless-auth
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - "./cc-test-reporter before-build"
+script:
+  - npm run eslint
+  - npm test
+after_success:
+  - "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
+after_failure:
+  - exit 1
+deploy:
+  skip_cleanup: true
+  provider: npm
+  email: stanchino@gmail.com
+  api_key:
+    secure: hofYjWF7pK3e2d+ImWAdvbK1jtmfCvj2cWTwwgN8vO5u1KDHLybvcjh/ncvblHicNZ0/3GdNJ5aKmFBtqSTnZ8WqEab1iv5nACHDRX6yfBXUSTi12JrD6mEvWjqU56RzWCLNgpT9rPwcMPRsfVHNz4Qt9LnqqS8EVGRxxJ9O6u/l3tuAc5gpzHxQmxi7h7qwItc9VwRgvD+lmIfcYah983pqmltLPCNn4jy/A7OgObBQsMedPIyvSP89z/FrdYZgH3Tvl0EqeS8btq4vORvXlan28ClpnCZ4fig4t/uSk3WZvz0cYhSvg16zWPPGKCYDeTPTPt5MnNEpZbUYx5edi8kPJ7fYq8GbD6bkQj2Uia2rHPgMx1kfQ/PQvJF4rhiQd4NfZBKZjPuq678aUgF8IhPo7d0rZ6JZKGPOb6wyII0zmoueCEC8KHM91YJVyvy68Hd9Z9F9yzrzUA53TLW5dbhsIFGJv+QQASxQa4N6XBPC6kTcHvTLh/Hooa8S7rvXT2yBM8rmUze+DqCXwyrGE6wgFc9uB/7hUdi/sF0VSNw1gqiEanEHz7ozYg0EMuh3tvSVKhDmIISrbcqU0Iua95TjLF9PG2v5dyBlrozFoRoJvVsGUOxaQkTv8gN+zCCtwUo20qyrU3uAkAUt7EjzZpph7plo5mtAA0+z0Idz5c0=
+  on:
+    branch: master
+    repo: stanchino/react-serverless-auth

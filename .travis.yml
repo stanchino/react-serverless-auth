@@ -1,25 +1,28 @@
 env:
   global:
-    - CC_TEST_REPORTER_ID=acdec03fe2f3a1babf23bbeb39e49678c28d9f81ff0928a52f3ec25f2ae0c719
+  - CC_TEST_REPORTER_ID=acdec03fe2f3a1babf23bbeb39e49678c28d9f81ff0928a52f3ec25f2ae0c719
 language: node_js
 node_js:
   - stable
 cache:
   yarn: true
   directories:
-  - node_modules
+    - node_modules
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
+  - "./cc-test-reporter before-build"
+script:
+  - npm run eslint
+  - npm test
 after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  - "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
 deploy:
   skip_cleanup: true
   provider: npm
   email: stanchino@gmail.com
   api_key:
-    secure: Q5HyCU8pa7b95ODvVner2Z1CweT+2yqKvHvHK2gwUCwQVPmzJUeANmiNBBDEncxFtzY1Ozia89ycVzoWjSHoe0BBej1j2Xpnd6Xnk+mibKyiUyjxpGRzW3+D/UOMgkid46ayvM5r28KQZELkOGkEBhKElA76cmpe22+a3S8BUGe1N5OJBh2U+FpJuXaUBdbS3Y7tvRHuC1Oo5uF8/gv/n0BsjaQlHAWrqKkmiUMcUXD4JEA7cLj2wMGG3noJNxPVUjrsRv07kUWd5pruRSqdYy1PDdztFzdOlocIHo7dGM4eYBuMJAGacsHEZsqUwNwt04BzT63YdgjECQBizhCYpe5LbFzdiIlMgYBGkhd8sTtg5zcgrtYJ70qk9c8GYdaScvZaxxRS+wWk1Xv3cDmt3paxNf94wJE09N3f0XFKjyY1ajoZwLhrHburssP+fb0zWLcGMGw5PxetEos9G1fuLlrk1WTYWnytjTslRQkUQzb+VptrwBB5Pe9jHCdU691ZyG9kx6RmkXOMuzOTCEcWIDTdGMxpFnRfv8tq3vgfjr2fuXaMoKP001QRxRNchd1LCJCkEOSZGsd1kpp7fWKtLnF2A6/WGnJIxdHwvXc2dcgmf6kpvwe4FrMLEjYAnnL8g6whtni2Bjzs5Tf1Fv8Vp21GSQdBe9Kp/dkqKCwuXbA=
+    secure: hofYjWF7pK3e2d+ImWAdvbK1jtmfCvj2cWTwwgN8vO5u1KDHLybvcjh/ncvblHicNZ0/3GdNJ5aKmFBtqSTnZ8WqEab1iv5nACHDRX6yfBXUSTi12JrD6mEvWjqU56RzWCLNgpT9rPwcMPRsfVHNz4Qt9LnqqS8EVGRxxJ9O6u/l3tuAc5gpzHxQmxi7h7qwItc9VwRgvD+lmIfcYah983pqmltLPCNn4jy/A7OgObBQsMedPIyvSP89z/FrdYZgH3Tvl0EqeS8btq4vORvXlan28ClpnCZ4fig4t/uSk3WZvz0cYhSvg16zWPPGKCYDeTPTPt5MnNEpZbUYx5edi8kPJ7fYq8GbD6bkQj2Uia2rHPgMx1kfQ/PQvJF4rhiQd4NfZBKZjPuq678aUgF8IhPo7d0rZ6JZKGPOb6wyII0zmoueCEC8KHM91YJVyvy68Hd9Z9F9yzrzUA53TLW5dbhsIFGJv+QQASxQa4N6XBPC6kTcHvTLh/Hooa8S7rvXT2yBM8rmUze+DqCXwyrGE6wgFc9uB/7hUdi/sF0VSNw1gqiEanEHz7ozYg0EMuh3tvSVKhDmIISrbcqU0Iua95TjLF9PG2v5dyBlrozFoRoJvVsGUOxaQkTv8gN+zCCtwUo20qyrU3uAkAUt7EjzZpph7plo5mtAA0+z0Idz5c0=
   on:
     branch: master
     repo: stanchino/react-serverless-auth

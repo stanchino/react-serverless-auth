@@ -11,13 +11,13 @@
 ## Installation
 
 ```bash
-$ npm install react-serverless-auth
+$ npm install --save react-serverless-auth
 ```
 
 or
 
 ```bash
-$ yarn install react-serverless-auth
+$ yarn add react-serverless-auth
 ```
 
 ## Example

@@ -1,3 +1,3 @@
-import authSagas from "react-serverless-auth/build/sagas";
+import authSagas from "react-serverless-auth/dist/sagas";
 
 export default authSagas;

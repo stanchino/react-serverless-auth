@@ -1,22 +1,19 @@
 env:
   global:
-  - CC_TEST_REPORTER_ID=acdec03fe2f3a1babf23bbeb39e49678c28d9f81ff0928a52f3ec25f2ae0c719
+    - CC_TEST_REPORTER_ID=acdec03fe2f3a1babf23bbeb39e49678c28d9f81ff0928a52f3ec25f2ae0c719
 language: node_js
 node_js:
-- stable
+  - stable
 cache:
   yarn: true
   directories:
   - node_modules
 before_script:
-- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
-  > ./cc-test-reporter
-- chmod +x ./cc-test-reporter
-- "./cc-test-reporter before-build"
-script:
-- npm test
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 after_script:
-- "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 deploy:
   provider: npm
   email: stanchino@gmail.com

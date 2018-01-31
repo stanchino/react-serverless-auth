@@ -14,9 +14,8 @@ before_script:
   - ./cc-test-reporter before-build
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
-before_deplay:
-  - npm install -g rimraf
 deploy:
+  skip_cleanup: true
   provider: npm
   email: stanchino@gmail.com
   api_key:

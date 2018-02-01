@@ -37,10 +37,13 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.6.1",
+    "eslint-watch": "^3.1.3",
+    "history": "^4.7.2",
     "jest": "^22.1.4",
     "jest-cli": "^21.2.1",
     "jest-enzyme": "^4.0.2",
     "npm-run-all": "^4.1.2",
+    "react-router": "^4.2.0",
     "react-scripts": "^1.1.0",
     "rimraf": "^2.6.2",
     "semantic-release": "^12.4.1",
@@ -88,13 +91,15 @@
   },
   "scripts": {
     "build": "babel src --out-dir dist --ignore **/tests/*,spec.js,test.js,setupTests.js",
+    "build:watch": "npm run build -- --watch",
     "clean": "rimraf dist",
+    "dev": "run-p build:watch test:watch eslint:watch example",
     "eslint": "eslint ./src/**/*.{js,jsx}",
-    "example": "cd example && react-scripts start",
+    "eslint:watch": "esw ./src/**/*.{js,jsx} -w --fix",
+    "example": "cd example && npm link react-serverless-auth ../ && react-scripts start",
     "prepublishOnly": "run-s clean build",
     "test": "npm run eslint && react-scripts test --env=jsdom -u ",
-    "semantic-release": "semantic-release",
-    "travis-deploy-once": "travis-deploy-once"
+    "test:watch": "react-scripts test --env=jsdom -u --watchAll"
   },
   "release": {
     "branch": "master",

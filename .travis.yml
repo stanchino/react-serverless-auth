@@ -26,6 +26,6 @@ deploy:
   provider: script
   skip_cleanup: true
   script:
-    - npm run travis-deploy-once "npm run semantic-release"
+    - npx travis-deploy-once "npx semantic-release"
   on:
     branch: master

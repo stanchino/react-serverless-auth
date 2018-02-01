@@ -17,10 +17,5 @@
     "type": "git",
     "url": "https://github.com/stanchino/react-serverless-auth/example"
   },
-  "dependencies": {
-    "history": "^4.7.2",
-    "react-router": "^4.2.0",
-    "react-serverless-auth": "file:.."
-  },
   "scripts": {}
 }

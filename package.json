@@ -85,7 +85,7 @@
     "clean": "rimraf dist",
     "eslint": "eslint ./src/**/*.{js,jsx}",
     "example": "cd example && react-scripts start",
-    "prepublishOnly": "run-s clean build",
+    "prepublishOnly": "run-s eslint test clean build",
     "test": "react-scripts test --env=jsdom --coverage -u"
   }
 }

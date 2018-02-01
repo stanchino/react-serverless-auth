@@ -16,6 +16,9 @@
     "type": "git",
     "url": "https://github.com/stanchino/react-serverless-auth"
   },
+  "engines": {
+    "node": ">=4"
+  }
   "main": "dist/index.js",
   "devDependencies": {
     "babel-cli": "^6.26.0",

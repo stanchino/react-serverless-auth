@@ -7,7 +7,7 @@ import createHistory from "history/createHashHistory";
 import { Switch, Route } from "react-router";
 import { mount } from "enzyme";
 
-import { initialState } from "../../reducers/auth";
+import { initialState } from "../../reducers/initialState";
 
 import { UnauthenticatedLink } from "..";
 

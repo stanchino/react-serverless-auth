@@ -1,4 +1,5 @@
-import reducer, { initialState } from "../auth";
+import reducer from "../auth";
+import { initialState } from "../initialState";
 import {
     signUpRoutine, confirmRegistrationRoutine, signInRoutine, authRoutine, signOutRoutine,
     passwordResetRequestRoutine

@@ -1,3 +1,6 @@
+branches:
+  except:
+    - /^v[0-9]/
 env:
   global:
     - CC_TEST_REPORTER_ID=acdec03fe2f3a1babf23bbeb39e49678c28d9f81ff0928a52f3ec25f2ae0c719
@@ -6,10 +9,9 @@ node_js:
   - node
   - lts/*
 os:
-  - linux
   - osx
+  - linux
 cache:
-  yarn: true
   directories:
     - node_modules
 before_script:

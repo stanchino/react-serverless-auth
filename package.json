@@ -1,6 +1,6 @@
 {
   "name": "react-serverless-auth",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Implement Amazon Cognito authentication in a React application",
   "keywords": [
     "react",
@@ -85,7 +85,7 @@
     "clean": "rimraf dist",
     "eslint": "eslint ./src/**/*.{js,jsx}",
     "example": "cd example && react-scripts start",
-    "prepublishOnly": "run-s eslint test clean build",
+    "prepublishOnly": "run-s clean build",
     "test": "react-scripts test --env=jsdom --coverage -u"
   }
 }

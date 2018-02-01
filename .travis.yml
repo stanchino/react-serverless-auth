@@ -27,4 +27,3 @@ deploy:
     - npm run travis-deploy-once "npm run semantic-release"
   on:
     branch: master
-    condition: $TRAVIS_OS_NAME == "linux"

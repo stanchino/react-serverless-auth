@@ -1,6 +1,6 @@
 {
   "name": "react-serverless-auth",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Serverless authentication components for React",
   "keywords": [
     "react",
@@ -61,7 +61,7 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}",
-      "!src/**/sharedExamples.{js,jsx}",
+      "!src/**/shared-examples.{js,jsx}",
       "!<rootDir>/node_modules/"
     ],
     "coverageThreshold": {
@@ -86,6 +86,6 @@
     "eslint": "eslint ./src/**/*.{js,jsx}",
     "example": "cd example && react-scripts start",
     "prepublishOnly": "run-s clean build",
-    "test": "react-scripts test --env=jsdom --coverage -u"
+    "test": "react-scripts test --env=jsdom"
   }
 }

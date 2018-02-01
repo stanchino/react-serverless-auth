@@ -1,6 +1,6 @@
 import reducer from "../auth";
-import { initialState } from "../initialState";
-import { authRoutine } from "../../actions";
+import { initialState } from "../../initialState";
+import { authRoutine } from "../../../actions";
 
 import { behavesLikeReducerWithPayload } from "./shared-examples";
 

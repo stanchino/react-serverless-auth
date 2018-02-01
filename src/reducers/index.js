@@ -1,17 +1,11 @@
 import { combineReducers } from "redux";
-import reduceReducers from "reduce-reducers";
 import { routerReducer } from "react-router-redux";
 import { reducer as formReducer  } from "redux-form";
 
-import auth from "./auth";
-import confirmRegistration from "./confirmRegistration";
-import passwordReset from "./passwordReset";
-import signIn from "./signIn";
-import signOut from "./signOut";
-import signUp from "./signUp";
+import authReducer from "./auth";
 
 export default combineReducers({
-  auth: reduceReducers(auth, confirmRegistration, passwordReset, signIn, signOut, signUp),
+  auth: authReducer,
   form: formReducer,
   router: routerReducer
 });

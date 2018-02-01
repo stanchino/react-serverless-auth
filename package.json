@@ -59,6 +59,7 @@
     "react-router-dom": "^4.2.2",
     "react-router-redux": "5.0.0-alpha.9",
     "react-test-renderer": "^16.2.0",
+    "reduce-reducers": "^0.1.2",
     "redux": "^3.7.2",
     "redux-form": "^7.2.1",
     "redux-form-validators": "^2.3.2",
@@ -99,7 +100,7 @@
     "example": "cd example && npm link react-serverless-auth ../ && react-scripts start",
     "prepublishOnly": "run-s clean build",
     "test": "npm run eslint && react-scripts test --env=jsdom -u ",
-    "test:watch": "react-scripts test --env=jsdom -u --watchAll"
+    "test:watch": "react-scripts test --env=jsdom -u --coverage --watchAll"
   },
   "release": {
     "branch": "master",

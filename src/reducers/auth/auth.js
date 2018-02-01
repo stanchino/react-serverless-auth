@@ -1,6 +1,6 @@
-import { authRoutine } from "../actions";
+import { authRoutine } from "../../actions";
 
-import { initialState } from "./initialState";
+import { initialState } from "../initialState";
 
 export default (state = initialState, action) => {
     switch (action.type) {

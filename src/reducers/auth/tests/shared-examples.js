@@ -1,4 +1,4 @@
-import {initialState} from "../initialState";
+import { initialState } from "../../initialState";
 
 export const testAction = (reducer, action, expectedState) => {
   it(`should handle ${action.type}`, () => {

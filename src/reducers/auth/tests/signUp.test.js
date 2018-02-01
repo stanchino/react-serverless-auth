@@ -1,6 +1,6 @@
 import reducer from "../signUp";
-import { initialState } from "../initialState";
-import { signUpRoutine } from "../../actions";
+import { initialState } from "../../initialState";
+import { signUpRoutine } from "../../../actions";
 
 import { behavesLikeReducerWithPayload } from "./shared-examples";
 

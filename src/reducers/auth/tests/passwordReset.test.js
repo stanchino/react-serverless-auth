@@ -1,6 +1,6 @@
 import reducer from "../passwordReset";
-import { initialState } from "../initialState";
-import { passwordResetRequestRoutine } from "../../actions";
+import { initialState } from "../../initialState";
+import { passwordResetRequestRoutine } from "../../../actions";
 
 import { behavesLikeReducerWithPayload } from "./shared-examples";
 

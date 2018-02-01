@@ -1,6 +1,6 @@
 import reducer from "../signOut";
-import { initialState } from "../../initialState";
-import { signOutRoutine } from "../../../actions";
+import { initialState } from "../initialState";
+import { signOutRoutine } from "../../actions/index";
 
 import { testAction } from "./shared-examples";
 

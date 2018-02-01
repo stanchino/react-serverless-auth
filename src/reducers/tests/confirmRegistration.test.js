@@ -1,6 +1,6 @@
 import reducer from "../confirmRegistration";
-import { initialState } from "../../initialState";
-import { confirmRegistrationRoutine } from "../../../actions";
+import { initialState } from "../initialState";
+import { confirmRegistrationRoutine } from "../../actions/index";
 
 import { behavesLikeReducerWithoutPayload } from "./shared-examples";
 

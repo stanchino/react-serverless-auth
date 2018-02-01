@@ -1,6 +1,6 @@
-import { passwordResetRequestRoutine } from "../../actions";
+import { passwordResetRequestRoutine } from "../actions/index";
 
-import { initialState, flash } from "../initialState";
+import { initialState, flash } from "./initialState";
 
 export default (state = initialState, action) => {
   switch (action.type) {

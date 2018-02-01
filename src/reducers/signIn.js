@@ -1,6 +1,6 @@
-import { signInRoutine } from "../../actions";
+import { signInRoutine } from "../actions/index";
 
-import { initialState, flash } from "../initialState";
+import { initialState, flash } from "./initialState";
 
 export default (state = initialState, action) => {
   switch (action.type) {

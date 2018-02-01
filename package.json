@@ -97,7 +97,7 @@
     "dev": "run-p build:watch test:watch eslint:watch example",
     "eslint": "eslint ./src/**/*.{js,jsx}",
     "eslint:watch": "esw ./src/**/*.{js,jsx} -w --fix",
-    "example": "cd example && npm link react-serverless-auth ../ && react-scripts start",
+    "example": "npm run build && cd example &&  npm link react-serverless-auth ../ && react-scripts start",
     "prepublishOnly": "run-s clean build",
     "test": "npm run eslint && react-scripts test --env=jsdom -u ",
     "test:watch": "react-scripts test --env=jsdom -u --coverage --watchAll"

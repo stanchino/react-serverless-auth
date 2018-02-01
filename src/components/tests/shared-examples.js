@@ -3,7 +3,7 @@ import { Provider } from "react-redux";
 import renderer from "react-test-renderer";
 import createStore from "redux-mock-store";
 
-import { initialState } from "../../reducers/auth";
+import { initialState } from "../../reducers/initialState";
 import { connectForm } from "../../containers/connectForm";
 
 const mockStore = createStore();

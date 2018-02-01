@@ -61,5 +61,6 @@ export default [
     passwordResetRequestWatcher,
     signInWatcher,
     signOutWatcher,
-    signUpWatcher
+    signUpWatcher,
+    handleAuthSaga
 ];

@@ -17,15 +17,7 @@ before_script:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then chmod +x ./cc-test-reporter ; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./cc-test-reporter before-build ; fi
 script:
-  - npm run eslint
-  - npm test --coverage
+  - npm test
 after_script:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT ; fi
-deploy:
-  provider: script
-  skip_cleanup: true
-  script:
-    - npm run travis-deploy-once "npm run semantic-release"
-  on:
-    branch: master
-    repo: stanchino/react-serverless-auth
+  - npm run travis-deploy-once "npm run semantic-release"

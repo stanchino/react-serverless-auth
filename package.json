@@ -91,8 +91,11 @@
     "eslint": "eslint ./src/**/*.{js,jsx}",
     "example": "cd example && react-scripts start",
     "prepublishOnly": "run-s clean build",
-    "test": "react-scripts test --env=jsdom -u",
+    "test": "npm run eslint && react-scripts test --env=jsdom --coverage -u",
     "semantic-release": "semantic-release",
     "travis-deploy-once": "travis-deploy-once"
+  },
+  "release": {
+    "branch": "master"
   }
 }

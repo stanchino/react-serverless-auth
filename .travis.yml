@@ -6,6 +6,9 @@ node_js:
   - stable
   - 8
   - 6
+os:
+  - linux
+  - osx
 cache:
   yarn: true
   directories:
@@ -15,8 +18,8 @@ before_script:
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
 script:
-  - yarn eslint
-  - yarn test --coverage
+  - npm run eslint
+  - npm test --coverage
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 deploy:

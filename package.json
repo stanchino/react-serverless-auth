@@ -61,7 +61,7 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}",
-      "!src/**/sharedExamples.{js,jsx}",
+      "!src/**/shared-examples.{js,jsx}",
       "!<rootDir>/node_modules/"
     ],
     "coverageThreshold": {
@@ -86,6 +86,6 @@
     "eslint": "eslint ./src/**/*.{js,jsx}",
     "example": "cd example && react-scripts start",
     "prepublishOnly": "run-s clean build",
-    "test": "react-scripts test --env=jsdom --coverage -u"
+    "test": "react-scripts test --env=jsdom"
   }
 }

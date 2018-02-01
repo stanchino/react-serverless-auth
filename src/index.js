@@ -1,3 +1,6 @@
+import authSagas from "./sagas";
+import authReducer from "./reducers";
+import authMiddleware from "./middlewares";
 export {
   ActionButton,
     ConfirmationCode,
@@ -22,3 +25,4 @@ export {
   Unauthenticated,
   UnauthenticatedLink
 } from "./containers";
+export { authReducer, authSagas, authMiddleware }

@@ -18,10 +18,10 @@ script:
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 deploy:
-  provider: npm
-  email: stanchino@gmail.com
-  api_key: $NPM_TOKEN
+  provider: script
   skip_cleanup: true
+  script:
+    - npx semantic-release
   on:
     branch: master
     repo: stanchino/react-serverless-auth

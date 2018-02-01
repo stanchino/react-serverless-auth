@@ -1,17 +1,6 @@
 import { signUpRoutine, confirmRegistrationRoutine, signInRoutine, authRoutine, signOutRoutine, passwordResetRequestRoutine } from "../actions";
 
-const flash = { flash: { error: null, notice: null } };
-
-export const initialState = {
-    loading: false,
-    isLoggedIn: false,
-    isRegistered: false,
-    passwordResetRequested: false,
-    profile: null,
-    pathname: '/',
-    user: null,
-    ...flash
-};
+import { initialState, flash } from "./initialState";
 
 export default (state = initialState, action) => {
     switch (action.type) {

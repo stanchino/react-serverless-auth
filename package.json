@@ -96,6 +96,9 @@
     "travis-deploy-once": "travis-deploy-once"
   },
   "release": {
-    "branch": "master"
+    "branch": "master",
+    "analyzeCommits": {
+      "preset": "eslint"
+    }
   }
 }

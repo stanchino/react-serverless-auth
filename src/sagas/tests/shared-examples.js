@@ -3,6 +3,7 @@ import { SubmissionError } from "redux-form";
 import { replace } from "react-router-redux";
 import sagaHelper from "redux-saga-testing";
 
+import { authRoutes } from "../..";
 import { signUpRoutine } from "../../actions";
 
 export const setupSaga = (saga, payload, routine, beforeRequest, requestPayload) => {
@@ -71,7 +72,7 @@ export const verifyUnconfirmedAction = (it, values, routine) => {
     });
 
     it("then redirects to the confirmRegistration page", result => {
-        expect(result).toEqual(put(replace("/auth/confirm")));
+        expect(result).toEqual(put(replace(authRoutes.confirm)));
     });
 
     finalizeSaga(it, routine);

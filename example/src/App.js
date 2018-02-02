@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { Switch, Route } from "react-router";
 
-import { Unauthenticated, UnauthenticatedLink, SignOutLink, PasswordResetForm } from "react-serverless-auth";
+import { Unauthenticated, UnauthenticatedLink, SignOutLink, PasswordResetForm, authRoutes } from "react-serverless-auth";
 
 import {
     ConfirmationForm,
@@ -25,18 +25,18 @@ export default () => (
             <NavLink to="/">Home</NavLink>
             <NavLink to="/public">Public</NavLink>
             <NavLink to="/private">Private</NavLink>
-            <UnauthenticatedLink to="/auth/login">Sign In</UnauthenticatedLink>
-            <UnauthenticatedLink to="/auth/register">Sign Up</UnauthenticatedLink>
+            <UnauthenticatedLink to={authRoutes.signIn}>Sign In</UnauthenticatedLink>
+            <UnauthenticatedLink to={authRoutes.register}>Sign Up</UnauthenticatedLink>
             <SignOutLink className={"btn"}>Sign Out</SignOutLink>
         </nav>
         <Switch>
             <Route path={"/"} exact><Home /></Route>
             <Route path={"/public"}><Public /></Route>
             <Route path={"/private"}><Private /></Route>
-            <RouteWithRedirect to={"/"} path={"/auth/login"} component={SignInForm} />
-            <RouteWithRedirect to={"/"} path={"/auth/register"} component={SignUpForm} />
-            <RouteWithRedirect to={"/"} path={"/auth/confirm"} component={ConfirmationForm} />
-            <Route path={"/auth/reset"}>
+            <RouteWithRedirect to={"/"} path={authRoutes.signIn} component={SignInForm} />
+            <RouteWithRedirect to={"/"} path={authRoutes.register} component={SignUpForm} />
+            <RouteWithRedirect to={"/"} path={authRoutes.confirm} component={ConfirmationForm} />
+            <Route path={authRoutes.reset}>
                 <Unauthenticated component={NotFound}>
                     <PasswordResetForm
                         requestForm={PasswordResetRequestForm}

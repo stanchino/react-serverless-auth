@@ -1,12 +1,12 @@
-import {call, put, select } from "redux-saga/effects";
+import { call, put, select } from "redux-saga/effects";
 import { authRoutine } from "../actions";
 import { authRequest, userAttributes } from "../services";
 
-export const getUser = state => (state.auth.user);
+export const authSelector = state => state.auth;
 
 export function* handleAuthSaga() {
     let profile;
-    let user = yield select(getUser);
+    let { user } = yield select(authSelector);
     try {
         yield put(authRoutine.request());
         if (null === user)  {

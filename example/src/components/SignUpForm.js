@@ -2,14 +2,14 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 import {
+  authRoutes,
   Email,
   Password,
   PasswordConfirmation,
   ResetButton,
   SignUpForm ,
-  SubmitButton,
+  SubmitButton
 } from "react-serverless-auth";
-
 
 export default props => (
   <SignUpForm {...props}>
@@ -19,6 +19,6 @@ export default props => (
     <SubmitButton>Sign Up</SubmitButton>
     <ResetButton>Cancel</ResetButton>
     <br/>
-    <NavLink to={"/auth/reset"}>Forgotten Password?</NavLink>
+    <NavLink to={authRoutes.reset}>Forgotten Password?</NavLink>
   </SignUpForm>
 );

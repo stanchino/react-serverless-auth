@@ -7,7 +7,7 @@ import { confirmRegistrationRequest } from "../services";
 
 import { formError } from ".";
 
-export const authSelector = state => (state.auth);
+export const authSelector = state => state.auth;
 
 export function* handleConfirmRegistrationSaga({ payload: { values: { code } } }) {
     const { profile, pathname } = yield select(authSelector);

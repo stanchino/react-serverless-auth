@@ -1,9 +1,9 @@
-import {call, put, select} from "redux-saga/effects";
+import { call, put, select } from "redux-saga/effects";
 import { passwordResetConfirmRoutine, signInRoutine } from "../actions";
 import { passwordResetConfirm } from "../services";
 import { formError } from ".";
 
-export const authSelector = state => (state.auth);
+export const authSelector = state => state.auth;
 
 export function* handlePasswordResetConfirmSaga({ payload: { values } }) {
     const { code, password } = values;

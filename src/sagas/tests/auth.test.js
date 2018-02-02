@@ -2,7 +2,7 @@ import { call, put } from "redux-saga/effects";
 import { authRoutine } from "../../actions";
 import { authRequest, userAttributes } from "../../services";
 
-import { handleAuthSaga, getUser } from "../auth";
+import { handleAuthSaga, authSelector } from "../auth";
 import { setupSelectSaga, testSelector, finalizeSaga } from "./shared-examples";
 
 const authSuccess = result => {
@@ -11,7 +11,7 @@ const authSuccess = result => {
 
 describe("handleAuthSaga", () => {
     describe("when the user signs in", () => {
-        const it = setupSelectSaga(handleAuthSaga, undefined, authRoutine, getUser, 'user');
+        const it = setupSelectSaga(handleAuthSaga, undefined, authRoutine, authSelector, { user: 'user' });
 
         it("calls userAttributes", result => {
             expect(result).toEqual(call(userAttributes, "user"));
@@ -24,7 +24,7 @@ describe("handleAuthSaga", () => {
     });
 
     describe("when the user is already logged in", () => {
-        const it = setupSelectSaga(handleAuthSaga, undefined, authRoutine, getUser, null);
+        const it = setupSelectSaga(handleAuthSaga, undefined, authRoutine, authSelector, { user: null });
 
         it("calls authRequest", result => {
             expect(result).toEqual(call(authRequest));
@@ -42,7 +42,7 @@ describe("handleAuthSaga", () => {
     });
 
     describe("when the user is not logged in", () => {
-        const it = setupSelectSaga(handleAuthSaga, undefined, authRoutine, getUser, null);
+        const it = setupSelectSaga(handleAuthSaga, undefined, authRoutine, authSelector, { user: null });
 
         it("calls authRequest", result => {
             expect(result).toEqual(call(authRequest));
@@ -53,7 +53,7 @@ describe("handleAuthSaga", () => {
     });
 
     describe("when there is an error", () => {
-        const it = setupSelectSaga(handleAuthSaga, undefined, authRoutine, getUser, null);
+        const it = setupSelectSaga(handleAuthSaga, undefined, authRoutine, authSelector, { user: null });
 
         it("calls authRequest", result => {
             expect(result).toEqual(call(authRequest));
@@ -68,4 +68,4 @@ describe("handleAuthSaga", () => {
     });
 });
 
-testSelector(getUser, { auth: { user: "user" } }, "user");
+testSelector(authSelector, { auth: 'auth' }, 'auth');

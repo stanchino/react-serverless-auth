@@ -1,10 +1,12 @@
 import {call, put, select} from "redux-saga/effects";
 import { replace } from "react-router-redux";
+
+import { authRoutes } from "..";
 import { signInRoutine, authRoutine, signUpRoutine} from "../actions";
 import { signInRequest } from "../services";
 import { formError } from ".";
 
-export const routerSelector = state => (state.router);
+export const routerSelector = state => state.router;
 
 export function* handleSignInSaga({ payload: { values } }) {
     let user;
@@ -18,7 +20,7 @@ export function* handleSignInSaga({ payload: { values } }) {
     } catch (error) {
         if ("UserNotConfirmedException" === error.code) {
             yield put(signUpRoutine.success({ profile: { email: email, password: password }, flash: { error: error.message }, pathname: pathname }));
-            yield put(replace("/auth/confirm"));
+            yield put(replace(authRoutes.confirm));
         } else {
             yield formError(signInRoutine, {
                 email: "Invalid user.",

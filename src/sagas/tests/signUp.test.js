@@ -1,6 +1,7 @@
 import { call, put } from "redux-saga/effects";
 import { replace } from "react-router-redux";
 
+import { authRoutes } from "../..";
 import { signUpRequest } from "../../services";
 import { signUpRoutine, signInRoutine } from "../../actions";
 
@@ -28,7 +29,7 @@ describe("handleSignUpSaga", () => {
         });
 
         it("then redirects to the confirmRegistration URL", result => {
-            expect(result).toEqual(put(replace("/auth/confirm")));
+            expect(result).toEqual(put(replace(authRoutes.confirm)));
         });
 
         finalizeSaga(it, signUpRoutine);
@@ -56,7 +57,7 @@ describe("handleSignUpSaga", () => {
         });
 
         it("and redirects to the login route", result => {
-            expect(result).toEqual(put(replace("/auth/login")));
+            expect(result).toEqual(put(replace(authRoutes.signIn)));
         });
 
         it("and then nothing", result => {

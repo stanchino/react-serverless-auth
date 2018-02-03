@@ -46,17 +46,6 @@ describe("handleSignInSaga", () => {
         });
 
         verifyUnconfirmedAction(it, values, signInRoutine);
-        /*
-        it("and then triggers a signUp success action", result => {
-            expect(result).toEqual(put(signUpRoutine.success({ profile: values, flash: { error: "UserNotConfirmedException" }, pathname: "/path" })));
-        });
-
-        it("then redirects to the confirmRegistration page", result => {
-            expect(result).toEqual(put(replace("/auth/confirm")));
-        });
-
-        finalizeSaga(it, signInRoutine);
-        */
     });
 
     testServiceFailure(initializeSaga, signInRequest, signInRoutine, [values.email, values.password]);

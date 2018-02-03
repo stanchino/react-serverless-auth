@@ -1,6 +1,8 @@
 import authSagas from "./sagas";
 import authReducer from "./reducers";
 import authMiddleware from "./middlewares";
+import authRoutes from "./routes";
+
 export {
   ActionButton,
     ConfirmationCode,
@@ -13,6 +15,7 @@ export {
     ResetButton,
     SubmitButton
 } from "./components";
+
 export {
   ConfirmRegistrationForm,
   Protected,
@@ -25,4 +28,5 @@ export {
   Unauthenticated,
   UnauthenticatedLink
 } from "./containers";
-export { authReducer, authSagas, authMiddleware }
+
+export { authReducer, authSagas, authMiddleware, authRoutes }

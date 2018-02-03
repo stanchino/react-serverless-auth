@@ -46,17 +46,6 @@ describe("handlePasswordResetRequestSaga", () => {
         });
 
         verifyUnconfirmedAction(it, values, passwordResetRequestRoutine);
-        /*
-        it("and then triggers a signUp success action", result => {
-            expect(result).toEqual(put(signUpRoutine.success({ profile: values, flash: { error: "UserNotConfirmedException" }, pathname: "/path" })));
-        });
-
-        it("then redirects to the confirmRegistration page", result => {
-            expect(result).toEqual(put(replace("/auth/confirm")));
-        });
-
-        finalizeSaga(it, passwordResetRequestRoutine);
-        */
     });
 
     testServiceFailure(initializeSaga, passwordResetRequest, passwordResetRequestRoutine, [values.email]);

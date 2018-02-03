@@ -4,6 +4,8 @@ branches:
 env:
   global:
     - CC_TEST_REPORTER_ID=acdec03fe2f3a1babf23bbeb39e49678c28d9f81ff0928a52f3ec25f2ae0c719
+git:
+  submodules: false
 language: node_js
 node_js:
   - node
@@ -12,6 +14,7 @@ os:
   - osx
   - linux
 cache:
+  yarn: true
   directories:
     - node_modules
 before_script:
@@ -19,7 +22,8 @@ before_script:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then chmod +x ./cc-test-reporter ; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./cc-test-reporter before-build ; fi
 script:
-  - npm test -- --bail --ci --coverage
+  - yarn eslint
+  - yarn test --bail --ci --coverage
 after_success:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT ; fi
 deploy:

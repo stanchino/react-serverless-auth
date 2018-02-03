@@ -6,7 +6,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/8c4fb3714386dfe74a57/maintainability)](https://codeclimate.com/github/stanchino/react-serverless-auth/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/8c4fb3714386dfe74a57/test_coverage)](https://codeclimate.com/github/stanchino/react-serverless-auth/test_coverage)
 
-[![Edit react-serverless-auth-example](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/nr6jwoyn7j)
+[![Try react-serverless-auth on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/stanchino/react-serverless-auth-example/)
 
 ## Installation
 

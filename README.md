@@ -10,34 +10,30 @@
 
 ```bash
 $ npm install --save react-serverless-auth
-```
 
-or
+or using yarn:
 
-```bash
 $ yarn add react-serverless-auth
 ```
 
-## Example
+## Demo
 
 ```bash
 $ npm run example
-```
 
-or
+or using yarn:
 
-```bash
 $ yarn example
 ```
 
-## Tests
+## Development
 
 ```bash
 $ npm test
-```
 
-or
+alternatively
 
-```bash
 $ yarn test
 ```
+
+## Architecture

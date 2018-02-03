@@ -110,7 +110,7 @@ $ npm run dev
 ```
 
 ## Submitting Code
-After the development is finished make sure everything is properly tested and works in the example application. 
+After development is finished make sure everything is properly tested and works in the example application. 
 
 As described in the [Deployment](#deployment) section the project is released by
 [semantic-release](https://semantic-release.gitbooks.io/semantic-release/content/#highlights) which is configured 
@@ -118,10 +118,10 @@ to use the [ESLint Convention](https://www.npmjs.com/package/conventional-change
 
 Be sure to follow the commit message conventions.
 
-Commit message summaries must follow this basic format:
+Commit message summaries must follow this basic format for [GitHub issues]():
 
 ```
-Tag: Message (fixes #1234)
+Tag: Message Issue
 ```
 
 `Tag` should not be confused with git tag.
@@ -137,13 +137,20 @@ The `Tag` is one of the following:
 * `New` - implemented a new feature.
 * `Upgrade` - for a dependency upgrade.
 
-The message summary should be a one-sentence description of the change. The issue number should be mentioned at the 
-end. * The commit message should say "(fixes #1234)" at the end of the description if it closes out an existing issue 
-(replace 1234 with the issue number). If the commit doesn't completely fix the issue, then use `(refs #1234)` instead 
-of `(fixes #1234)`.
+The message summary should be a one-sentence description of the change. 
+
+The issue reference should be mentioned at the end:
+
+* For [GitHub issues](https://github.com/stanchino/react-serverless-auth/issues) the issue reference should be 
+formatted as `((fixes|refs) #ISSUE_NUMBER)` * The commit message should say "(fixes #1234)" at the end of the description 
+if it closes out an existing issue (replace 1234 with the issue number). If the commit doesn't completely fix the 
+issue, then use `(refs #1234)` instead of `(fixes #1234)`.
+* For [Pivotal tasks](https://www.pivotaltracker.com/n/projects/2147977) the issue reference should be formatted as 
+`[(Finishes|Fixes|Delivers) #PIVOTAL_TRACKER_STORY_ID]`. Use `Finishes` and `Fixes` to automatically put the Pivotal 
+task in `Finished` state and `Delivers` to put it in `Delivered` state when the pull request is merged. 
 
 Once you have committed your code push the changes to your fork and create a 
-[pull request](https://github.com/stanchino/react-serverless-auth/compare). 
+[pull request](https://github.com/stanchino/react-serverless-auth/compare)
 
 ## Deployment
 The project uses [semantic-release](https://semantic-release.gitbooks.io/semantic-release/content/#highlights) for

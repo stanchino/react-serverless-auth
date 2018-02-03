@@ -105,7 +105,11 @@
   "release": {
     "branch": "master",
     "analyzeCommits": {
-      "preset": "eslint"
+      "preset": "eslint",
+      "releaseRules": [
+        {"tag": "Upgrade", "release": "patch"},
+        {"tag": "Docs", "release": "patch"}
+      ]
     }
   }
 }

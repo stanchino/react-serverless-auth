@@ -45,6 +45,9 @@
     "npm-run-all": "^4.1.2",
     "react-router": "^4.2.0",
     "react-scripts": "^1.1.0",
+    "react-test-renderer": "^16.2.0",
+    "redux-mock-store": "^1.5.1",
+    "redux-saga-testing": "^1.0.5",
     "rimraf": "^2.6.2",
     "semantic-release": "^12.4.1",
     "travis-deploy-once": "^4.3.3"
@@ -58,15 +61,12 @@
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "react-router-redux": "5.0.0-alpha.9",
-    "react-test-renderer": "^16.2.0",
     "reduce-reducers": "^0.1.2",
     "redux": "^3.7.2",
     "redux-form": "^7.2.1",
     "redux-form-validators": "^2.3.2",
-    "redux-mock-store": "^1.5.1",
     "redux-saga": "^0.16.0",
-    "redux-saga-routines": "^2.2.2",
-    "redux-saga-testing": "^1.0.5"
+    "redux-saga-routines": "^2.2.2"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -92,14 +92,14 @@
   },
   "scripts": {
     "build": "babel src --out-dir dist --ignore **/tests/*,spec.js,test.js,setupTests.js",
-    "build:watch": "npm run build -- --watch",
+    "build:watch": "yarn build -- --watch",
     "clean": "rimraf dist",
     "dev": "run-p build:watch test:watch eslint:watch example",
     "eslint": "eslint ./src/**/*.{js,jsx}",
     "eslint:watch": "esw ./src/**/*.{js,jsx} -w --fix",
-    "example": "npm run build && cd example &&  npm link react-serverless-auth ../ && react-scripts start",
+    "example": "cd example && react-scripts start",
     "prepublishOnly": "run-s clean build",
-    "test": "npm run eslint && react-scripts test --env=jsdom -u ",
+    "test": "react-scripts test --env=jsdom -u",
     "test:watch": "react-scripts test --env=jsdom -u --coverage --watchAll"
   },
   "release": {

@@ -6,7 +6,7 @@ Your help and efforts for improving this project are much appreciated!
 ## Setup
 Start by forking and then cloning the repo locally:
 ```bash
-$ git clone git@github.com:stanchino/react-serverless-auth.git
+$ git clone --recursive git@github.com:stanchino/react-serverless-auth.git
 $ cd react-serverless-auth
 ```
 
@@ -82,12 +82,9 @@ $ codeclimate analyze src
 
 ## Example Application
 There is an [example application](https://github.com/stanchino/react-serverless-auth-example) available for testing 
-the package changes locally. To use it within the project's code base add it as a git submodule:
-```bash
-$ git add git@github.com:stanchino/react-serverless-auth-example.git example
-```
+the package changes locally. It is added to the repository as a git submodule in the [example](example) directory.
 
-When the example application submodule is added you need to link the project:
+To run the example application you need to link the project package first:
 ```bash
 $ yarn build && yarn link && cd example && yarn link react-serverless-auth && cd ../
 or

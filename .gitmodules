@@ -1,3 +1,3 @@
-[submodule "example"]
+[submodule "example-app"]
 	path = example
-	url = https://github.com/stanchino/react-serverless-auth-example.git
+	url = git@github.com:stanchino/react-serverless-auth-example.git

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResetButton matches the snapshot 1`] = `
+<button
+  disabled={false}
+  onClick={undefined}
+  type="reset"
+/>
+`;

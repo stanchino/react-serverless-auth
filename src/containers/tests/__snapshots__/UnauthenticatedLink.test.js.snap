@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UnauthenticatedLink Component matches the snapshot 1`] = `
+<div>
+  <nav>
+    <a
+      aria-current={false}
+      className={undefined}
+      href="#/auth"
+      onClick={[Function]}
+      style={undefined}
+    >
+      Link
+    </a>
+  </nav>
+  <div>
+    Home
+  </div>
+</div>
+`;

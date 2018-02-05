@@ -110,6 +110,9 @@
         {"tag": "Upgrade", "release": "patch"},
         {"tag": "Docs", "release": "patch"}
       ]
+    },
+    "generateNotes": {
+      "preset": "eslint"
     }
   }
 }

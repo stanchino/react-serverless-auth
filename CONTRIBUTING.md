@@ -85,21 +85,31 @@ There is an [example application](https://github.com/stanchino/react-serverless-
 the package changes locally. It is added to the repository as a git submodule in the [example](example) directory.
 
 ### Configuration
-Using the components from the current project requires a valid 
-[Amazon Cognito User Pool](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html)
-to be configured. You can find more about setting up the User Pool in the Amazon Cognito Identity SDK for JavaScript
-[documentation](https://github.com/aws/amazon-cognito-identity-js/#configuration).
+The [react-serverless-auth](https://www.npmjs.com/package/react-serverless-auth) package requires two configuration 
+values from your AWS Account in order to access your Cognito User Pool:
 
-The project configuration is based on environment variables as describe in the
+* The User Pool Id, e.g. `us-east-1_iwLVITRKW`
+* A User Pool App Client Id, e.g. `1hj3pe92ms19sfjvh6424ek4me`
+
+**IMPORTANT:** When creating the App, the generate client secret box must be **unchecked** because the JavaScript SDK 
+doesn't support apps that have a client secret.
+
+You can use the [AWS Console for Cognito User Pools](https://console.aws.amazon.com/cognito/users/) to get or create 
+these values.
+
+In order to use Cognito Federated Identity to provide access to your AWS resources or Cognito Sync you will 
+also need the Id of a Cognito Identity Pool that will accept login requests from the above Cognito User Pool and App.
+
+The project configuration is based on environment variables as described in the
 [create-react-app documentation](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-custom-environment-variables).
 
 The following variables are supported:
 ```dotenv
-REACT_APP_COGNITO_USER_POOL_ID=
-REACT_APP_COGNITO_CLIENT_ID=
+REACT_APP_COGNITO_USER_POOL_ID=us-east-1_iwLVITRKW
+REACT_APP_COGNITO_CLIENT_ID=1hj3pe92ms19sfjvh6424ek4me
 REACT_APP_AUTH_LOGIN_URL=/auth/login
 REACT_APP_AUTH_CONFIRM_URL=/auth/confirm
-REACT_APP_AUTH_REGISTER_URL=/auth/registration
+REACT_APP_AUTH_REGISTER_URL=/auth/register
 REACT_APP_AUTH_RESET_URL=/auth/reset
 ```
 

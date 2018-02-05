@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form matches the snapshot 1`] = `
+<form
+  className={undefined}
+  onSubmit={undefined}
+>
+  <div
+    className="messages"
+  >
+    <div
+      className="flash"
+    />
+  </div>
+</form>
+`;

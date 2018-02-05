@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Flash Component matches the snapshot 1`] = `
+<div
+  className="messages"
+>
+  <div
+    className="flash"
+  />
+</div>
+`;

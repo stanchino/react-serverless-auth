@@ -99,8 +99,8 @@
     "eslint:watch": "esw ./src/**/*.{js,jsx} -w --fix",
     "example": "cd example && react-scripts start",
     "prepublishOnly": "run-s clean build",
-    "test": "react-scripts test --env=jsdom -u",
-    "test:watch": "react-scripts test --env=jsdom -u --coverage --watchAll"
+    "test": "react-scripts test --env=jsdom --coverage",
+    "test:watch": "react-scripts test --env=jsdom --coverage --watchAll"
   },
   "release": {
     "branch": "master",

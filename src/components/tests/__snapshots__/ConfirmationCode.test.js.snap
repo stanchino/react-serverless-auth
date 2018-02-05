@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfirmationCode matches the snapshot 1`] = `
+<form
+  className={undefined}
+  onSubmit={[Function]}
+>
+  <div
+    className="messages"
+  >
+    <div
+      className="flash"
+    />
+  </div>
+  <div>
+    <label />
+    <div>
+      <input
+        name="code"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onDragStart={[Function]}
+        onDrop={[Function]}
+        onFocus={[Function]}
+        placeholder="Confirmation Code"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</form>
+`;

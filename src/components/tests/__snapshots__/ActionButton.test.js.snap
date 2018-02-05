@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ActionButton matches the snapshot 1`] = `
+<button
+  onClick={undefined}
+  type="button"
+/>
+`;

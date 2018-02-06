@@ -7,7 +7,6 @@ import SignInForm from "./SignInForm";
 import SignOutLink from "./SignOutLink";
 import SignUpForm from "./SignUpForm";
 import Unauthenticated from "./Unauthenticated";
-import UnauthenticatedLink from "./UnauthenticatedLink";
 
 export {
     ConfirmRegistrationForm,
@@ -18,6 +17,5 @@ export {
     SignInForm,
     SignOutLink,
     SignUpForm,
-    Unauthenticated,
-    UnauthenticatedLink
+    Unauthenticated
 }

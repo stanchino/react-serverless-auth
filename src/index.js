@@ -23,8 +23,7 @@ import {
   SignInForm,
   SignOutLink,
   SignUpForm,
-  Unauthenticated,
-  UnauthenticatedLink
+  Unauthenticated
 } from "./containers";
 
 export {
@@ -52,6 +51,5 @@ export {
   SignInForm,
   SignOutLink,
   SignUpForm,
-  Unauthenticated,
-  UnauthenticatedLink
+  Unauthenticated
 }

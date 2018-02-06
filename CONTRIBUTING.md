@@ -71,15 +71,6 @@ or
 $ npm run build:watch
 ```
 
-## Code Quality
-The project uses [CodeClimate](https://codeclimate.com/) for code quality control. Refer to the 
-[Code Climate CLI](https://github.com/codeclimate/codeclimate) repository for installing the command line tool.
-
-Analyze your code using the Code Climate CLI:
-```bash
-$ codeclimate analyze src
-``` 
-
 ## Example Application
 There is an [example application](https://github.com/stanchino/react-serverless-auth-example) available for testing 
 the package changes locally. It is added to the repository as a git submodule in the [example](example) directory.
@@ -114,7 +105,7 @@ REACT_APP_AUTH_RESET_URL=/auth/reset
 ```
 
 ### Installation
-To run the example application you need to link the project package first:
+To run the example application you need to link the project first:
 ```bash
 $ yarn link && cd example && yarn link react-serverless-auth && cd ../
 or
@@ -134,21 +125,21 @@ in the following way:
 "test": "yarn add react && react-scripts test --env=jsdom --coverage" 
 ...
 ```
-
-and add it back when you need to run the tests:
-```bash
-$ yarn add react && yarn test
-or
-$ npm install --save react && npm test
-```
-
-This will install the requirements for the project package and will build it. After the package is linked 
-successfully you can start the example application and test it in your browser:
+After the package is properly linked you can start it and test the components in your browser:
 ```bash
 $ yarn start
 or
 $ npm run start
 ```
+
+## Code Quality
+The project uses [CodeClimate](https://codeclimate.com/) for code quality control. Refer to the 
+[Code Climate CLI](https://github.com/codeclimate/codeclimate) repository for installing the command line tool.
+
+Analyze your code using the Code Climate CLI:
+```bash
+$ codeclimate analyze src
+``` 
 
 ## Submitting Code
 After development is finished make sure everything is properly tested and works in the example application. 

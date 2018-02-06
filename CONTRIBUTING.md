@@ -116,24 +116,38 @@ REACT_APP_AUTH_RESET_URL=/auth/reset
 ### Installation
 To run the example application you need to link the project package first:
 ```bash
-$ yarn build && yarn link && cd example && yarn link react-serverless-auth && cd ../
+$ yarn link && cd example && yarn link react-serverless-auth && cd ../
 or
-$ npm link && cd example && npm link react-serverless-auth ../ && cd ../
+$ npm link && cd example && npm link react-serverless-auth && cd ../
+```
+
+Next build the package or run the script that builds the changes automatically as described in the [Build](#build)
+section.
+
+**IMPORTANT:** Currently there is a [bug in create-react-app](https://github.com/facebook/create-react-app/issues/3883),
+so in order to be able to both run the tests and the example app the [package.json](package.json) scripts are updated
+in the following way:
+```json
+...
+"build": "yarn add react && babel src --out-dir dist --ignore **/tests/*,spec.js,test.js,setupTests.js",
+"start": "yarn remove react && cd example && react-scripts start",
+"test": "yarn add react && react-scripts test --env=jsdom --coverage" 
+...
+```
+
+and add it back when you need to run the tests:
+```bash
+$ yarn add react && yarn test
+or
+$ npm install --save react && npm test
 ```
 
 This will install the requirements for the project package and will build it. After the package is linked 
 successfully you can start the example application and test it in your browser:
 ```bash
-$ yarn example
+$ yarn start
 or
-$ npm run example
-```
-
-There is also a script that runs all the watch tasks (ESLint, Tests and Build) and starts the example application:
-```bash
-$ yarn dev
-or
-$ npm run dev
+$ npm run start
 ```
 
 ## Submitting Code

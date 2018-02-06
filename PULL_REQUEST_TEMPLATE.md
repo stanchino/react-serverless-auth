@@ -1,5 +1,2 @@
-[Issue]()
-
-## Proposed Changes
-
-  - 
+# Resolve the following issues:
+  - [#]()

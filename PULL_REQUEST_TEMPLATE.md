@@ -1,2 +1,3 @@
-# Resolve the following issues:
+## Resolves the following issues:
+
   - [#]()

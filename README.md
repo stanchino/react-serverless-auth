@@ -1,6 +1,7 @@
 # React Authentication Components using AWS Cognito
 
-[![Build Status](https://travis-ci.org/stanchino/react-serverless-auth.svg?branch=master)](https://travis-ci.org/stanchino/react-serverless-auth)
+[![Build Status](https://travis-ci.org/stanchino/react-serverless-auth.svg?branch=development)](https://travis-ci.org/stanchino/react-serverless-auth)
+[![Coverage Status](https://coveralls.io/repos/github/stanchino/react-serverless-auth/badge.svg?branch=development)](https://coveralls.io/github/stanchino/react-serverless-auth?branch=development)
 [![dependencies Status](https://david-dm.org/stanchino/react-serverless-auth/status.svg)](https://david-dm.org/stanchino/react-serverless-auth)
 [![npm version](https://badge.fury.io/js/react-serverless-auth.svg)](https://badge.fury.io/js/react-serverless-auth)
 [![Maintainability](https://api.codeclimate.com/v1/badges/8c4fb3714386dfe74a57/maintainability)](https://codeclimate.com/github/stanchino/react-serverless-auth/maintainability)

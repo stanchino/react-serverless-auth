@@ -4,6 +4,7 @@ branches:
 env:
   global:
     - CC_TEST_REPORTER_ID=acdec03fe2f3a1babf23bbeb39e49678c28d9f81ff0928a52f3ec25f2ae0c719
+    - COVERALLS_REPO_TOKEN=go8J7jfWhVVLexk3YXXcQZ3vZyjMOJXNU
 git:
   submodules: false
 language: node_js
@@ -24,7 +25,8 @@ before_script:
 script:
   - yarn eslint
   - yarn test --bail --ci --coverage
-after_success:
+after_script:
+  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT ; fi
 deploy:
   provider: script

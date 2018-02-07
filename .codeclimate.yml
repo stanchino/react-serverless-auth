@@ -21,3 +21,4 @@ exclude_paths:
   - "**/*.snap"
   - "coverage/**/*"
   - ".idea/"
+  - "dist/"

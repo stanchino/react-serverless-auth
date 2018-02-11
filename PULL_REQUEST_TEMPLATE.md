@@ -1,7 +1,3 @@
-Description [Issue Link]()
+## Resolves the following issues:
 
-## Proposed Changes
-
-  -
-  -
-  -
+  - [#]()

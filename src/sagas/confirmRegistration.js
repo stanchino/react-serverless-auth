@@ -10,8 +10,7 @@ import { formError } from ".";
 export const authSelector = state => state.auth;
 
 export function* handleConfirmRegistrationSaga({ payload: { values: { code } } }) {
-    const { profile, pathname } = yield select(authSelector);
-    const { email, password } = profile;
+    const { profile: { email, password }, pathname } = yield select(authSelector);
     try {
         yield put(confirmRegistrationRoutine.request());
         yield call(confirmRegistrationRequest, email, code);

@@ -71,6 +71,67 @@ or
 $ npm run build:watch
 ```
 
+## Example Application
+There is an [example application](https://github.com/stanchino/react-serverless-auth-example) available for testing 
+the package changes locally. It is added to the repository as a git submodule in the [example](example) directory.
+
+### Configuration
+The [react-serverless-auth](https://www.npmjs.com/package/react-serverless-auth) package requires two configuration 
+values from your AWS Account in order to access your Cognito User Pool:
+
+* The User Pool Id, e.g. `us-east-1_iwLVITRKW`
+* A User Pool App Client Id, e.g. `1hj3pe92ms19sfjvh6424ek4me`
+
+**IMPORTANT:** When creating the App, the generate client secret box must be **unchecked** because the JavaScript SDK 
+doesn't support apps that have a client secret.
+
+You can use the [AWS Console for Cognito User Pools](https://console.aws.amazon.com/cognito/users/) to get or create 
+these values.
+
+In order to use Cognito Federated Identity to provide access to your AWS resources or Cognito Sync you will 
+also need the Id of a Cognito Identity Pool that will accept login requests from the above Cognito User Pool and App.
+
+The project configuration is based on environment variables as described in the
+[create-react-app documentation](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-custom-environment-variables).
+
+The following variables are supported:
+```dotenv
+REACT_APP_COGNITO_USER_POOL_ID=us-east-1_iwLVITRKW
+REACT_APP_COGNITO_CLIENT_ID=1hj3pe92ms19sfjvh6424ek4me
+REACT_APP_AUTH_LOGIN_URL=/auth/login
+REACT_APP_AUTH_CONFIRM_URL=/auth/confirm
+REACT_APP_AUTH_REGISTER_URL=/auth/register
+REACT_APP_AUTH_RESET_URL=/auth/reset
+```
+
+### Installation
+To run the example application you need to link the project first:
+```bash
+$ yarn link && cd example && yarn link react-serverless-auth && cd ../
+or
+$ npm link && cd example && npm link react-serverless-auth && cd ../
+```
+
+Next build the package or run the script that builds the changes automatically as described in the [Build](#build)
+section.
+
+**IMPORTANT:** Currently there is a [bug in create-react-app](https://github.com/facebook/create-react-app/issues/3883),
+so in order to be able to both run the tests and the example app the [package.json](package.json) scripts are updated
+in the following way:
+```json
+...
+"build": "yarn add react && babel src --out-dir dist --ignore **/tests/*,spec.js,test.js,setupTests.js",
+"start": "yarn remove react && cd example && react-scripts start",
+"test": "yarn add react && react-scripts test --env=jsdom --coverage" 
+...
+```
+After the package is properly linked you can start it and test the components in your browser:
+```bash
+$ yarn start
+or
+$ npm run start
+```
+
 ## Code Quality
 The project uses [CodeClimate](https://codeclimate.com/) for code quality control. Refer to the 
 [Code Climate CLI](https://github.com/codeclimate/codeclimate) repository for installing the command line tool.
@@ -79,32 +140,6 @@ Analyze your code using the Code Climate CLI:
 ```bash
 $ codeclimate analyze src
 ``` 
-
-## Example Application
-There is an [example application](https://github.com/stanchino/react-serverless-auth-example) available for testing 
-the package changes locally. It is added to the repository as a git submodule in the [example](example) directory.
-
-To run the example application you need to link the project package first:
-```bash
-$ yarn build && yarn link && cd example && yarn link react-serverless-auth && cd ../
-or
-$ npm link && cd example && npm link react-serverless-auth ../ && cd ../
-```
-
-This will install the requirements for the project package and will build it. After the package is linked 
-successfully you can start the example application and test it in your browser:
-```bash
-$ yarn example
-or
-$ npm run example
-```
-
-There is also a script that runs all the watch tasks (ESLint, Tests and Build) and starts the example application:
-```bash
-$ yarn dev
-or
-$ npm run dev
-```
 
 ## Submitting Code
 After development is finished make sure everything is properly tested and works in the example application. 

@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Email matches the snapshot 1`] = `
+<form
+  className={undefined}
+  onSubmit={[Function]}
+>
+  <div
+    className="messages"
+  >
+    <div
+      className="flash"
+    />
+  </div>
+  <div>
+    <label />
+    <div>
+      <input
+        name="email"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onDragStart={[Function]}
+        onDrop={[Function]}
+        onFocus={[Function]}
+        placeholder="Email"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</form>
+`;

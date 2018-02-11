@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FlashMessages matches the snapshot 1`] = `
+<div
+  className="flash"
+>
+  <div
+    style={
+      Object {
+        "color": "red",
+      }
+    }
+  >
+    <strong>
+      error
+    </strong>
+  </div>
+  <div
+    style={
+      Object {
+        "color": "green",
+      }
+    }
+  >
+    <strong>
+      notice
+    </strong>
+  </div>
+</div>
+`;

@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormField matches the snapshot 1`] = `
+<div>
+  <label />
+  <div>
+    <input
+      placeholder={undefined}
+      type={undefined}
+    />
+    <span>
+      error
+    </span>
+  </div>
+</div>
+`;

@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SubmitButton matches the snapshot 1`] = `
+<button
+  disabled={false}
+  type="submit"
+/>
+`;

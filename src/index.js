@@ -2,31 +2,56 @@ import authSagas from "./sagas";
 import authReducer from "./reducers";
 import authMiddleware from "./middlewares";
 import authRoutes from "./routes";
-
-export {
+import {
   ActionButton,
-    ConfirmationCode,
-    Email,
-    Form,
-    FormField,
-    Messages,
-    Password,
-    PasswordConfirmation,
-    ResetButton,
-    SubmitButton
+  ConfirmationCode,
+  Email,
+  Form,
+  FormField,
+  Messages,
+  Password,
+  PasswordConfirmation,
+  ResetButton,
+  SubmitButton
 } from "./components";
-
-export {
+import {
   ConfirmRegistrationForm,
   Protected,
   PasswordResetForm,
   PasswordResetRequestForm,
   PasswordResetConfirmForm,
+  ResendConfirmationCodeButton,
   SignInForm,
-  SignOutLink,
+  SignOutButton,
   SignUpForm,
-  Unauthenticated,
-  UnauthenticatedLink
+  Unauthenticated
 } from "./containers";
 
-export { authReducer, authSagas, authMiddleware, authRoutes }
+export {
+  authReducer,
+  authSagas,
+  authMiddleware,
+  authRoutes,
+  // Components
+  ActionButton,
+  ConfirmationCode,
+  Email,
+  Form,
+  FormField,
+  Messages,
+  Password,
+  PasswordConfirmation,
+  ResetButton,
+  SubmitButton,
+  // Containers
+  ConfirmRegistrationForm,
+  Protected,
+  PasswordResetForm,
+  PasswordResetRequestForm,
+  PasswordResetConfirmForm,
+  ResendConfirmationCodeButton,
+  SignInForm,
+  SignOutButton,
+  SignUpForm,
+  Unauthenticated
+}

@@ -16,6 +16,7 @@ exports.passwordResetRequestWatcher = passwordResetRequestWatcher;
 exports.signInWatcher = signInWatcher;
 exports.signOutWatcher = signOutWatcher;
 exports.signUpWatcher = signUpWatcher;
+exports.resendConfirmationCodeWatcher = resendConfirmationCodeWatcher;
 
 var _effects = require("redux-saga/effects");
 
@@ -39,6 +40,8 @@ var _passwordResetRequest = require("./passwordResetRequest");
 
 var _passwordResetConfirm = require("./passwordResetConfirm");
 
+var _resendConfirmationCode = require("./resendConfirmationCode");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _marked = /*#__PURE__*/_regenerator2.default.mark(authWatcher),
@@ -47,7 +50,8 @@ var _marked = /*#__PURE__*/_regenerator2.default.mark(authWatcher),
     _marked4 = /*#__PURE__*/_regenerator2.default.mark(passwordResetRequestWatcher),
     _marked5 = /*#__PURE__*/_regenerator2.default.mark(signInWatcher),
     _marked6 = /*#__PURE__*/_regenerator2.default.mark(signOutWatcher),
-    _marked7 = /*#__PURE__*/_regenerator2.default.mark(signUpWatcher);
+    _marked7 = /*#__PURE__*/_regenerator2.default.mark(signUpWatcher),
+    _marked8 = /*#__PURE__*/_regenerator2.default.mark(resendConfirmationCodeWatcher);
 
 function authWatcher() {
     return _regenerator2.default.wrap(function authWatcher$(_context) {
@@ -161,8 +165,24 @@ function signUpWatcher() {
     }, _marked7, this);
 }
 
+function resendConfirmationCodeWatcher() {
+    return _regenerator2.default.wrap(function resendConfirmationCodeWatcher$(_context8) {
+        while (1) {
+            switch (_context8.prev = _context8.next) {
+                case 0:
+                    _context8.next = 2;
+                    return (0, _effects.takeEvery)(_actions.resendConfirmationCodeRoutine.TRIGGER, _resendConfirmationCode.handleResendConfirmationCodeSaga);
+
+                case 2:
+                case "end":
+                    return _context8.stop();
+            }
+        }
+    }, _marked8, this);
+}
+
 var formError = exports.formError = function formError(action, errors) {
     return (0, _effects.put)(action.failure(new _reduxForm.SubmissionError(errors)));
 };
 
-exports.default = [_reduxSagaRoutines.routinePromiseWatcherSaga, authWatcher, confirmRegistrationWatcher, passwordResetConfirmWatcher, passwordResetRequestWatcher, signInWatcher, signOutWatcher, signUpWatcher, _auth.handleAuthSaga];
+exports.default = [_reduxSagaRoutines.routinePromiseWatcherSaga, authWatcher, confirmRegistrationWatcher, passwordResetConfirmWatcher, passwordResetRequestWatcher, resendConfirmationCodeWatcher, signInWatcher, signOutWatcher, signUpWatcher, _auth.handleAuthSaga];

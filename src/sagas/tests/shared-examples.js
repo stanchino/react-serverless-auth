@@ -77,3 +77,10 @@ export const verifyUnconfirmedAction = (it, values, routine) => {
 
     finalizeSaga(it, routine);
 };
+
+export const assertSelector = (it, selector, data) => {
+  it("retrieves data from selector", result => {
+    expect(result).toEqual(select(selector));
+    return data;
+  });
+};

@@ -3,8 +3,9 @@ import Protected from "./Protected";
 import PasswordResetForm from "./PasswordResetForm";
 import PasswordResetRequestForm from "./PasswordResetRequestForm";
 import PasswordResetConfirmForm from "./PasswordResetConfirmForm";
+import ResendConfirmationCodeButton from "./ResendConfirmationCodeButton";
 import SignInForm from "./SignInForm";
-import SignOutLink from "./SignOutLink";
+import SignOutButton from "./SignOutButton";
 import SignUpForm from "./SignUpForm";
 import Unauthenticated from "./Unauthenticated";
 
@@ -14,8 +15,9 @@ export {
     PasswordResetForm,
     PasswordResetRequestForm,
     PasswordResetConfirmForm,
+    ResendConfirmationCodeButton,
     SignInForm,
-    SignOutLink,
+    SignOutButton,
     SignUpForm,
     Unauthenticated
 }

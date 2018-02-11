@@ -1,8 +1,8 @@
 import { connect } from "react-redux";
 import { componentOrNull } from "../helpers";
 
-const ProtectedComponent = ({ isLoggedIn, children, component }) => (
-    isLoggedIn ? children : componentOrNull(component)
+const ProtectedComponent = ({ isLoggedIn, children, component, ...props }) => (
+    isLoggedIn ? children : componentOrNull(component, props)
 );
 
 const mapStateToProps = state => ({

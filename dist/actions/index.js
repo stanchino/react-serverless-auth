@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.passwordResetConfirm = exports.passwordResetRequest = exports.confirmRegistration = exports.signUp = exports.signIn = exports.signUpRoutine = exports.signOutRoutine = exports.signInRoutine = exports.passwordResetConfirmRoutine = exports.passwordResetRequestRoutine = exports.confirmRegistrationRoutine = exports.authRoutine = undefined;
+exports.passwordResetConfirm = exports.passwordResetRequest = exports.confirmRegistration = exports.signUp = exports.signIn = exports.signUpRoutine = exports.signOutRoutine = exports.signInRoutine = exports.resendConfirmationCodeRoutine = exports.passwordResetConfirmRoutine = exports.passwordResetRequestRoutine = exports.confirmRegistrationRoutine = exports.authRoutine = undefined;
 
 var _reduxSagaRoutines = require("redux-saga-routines");
 
@@ -17,6 +17,7 @@ var authRoutine = exports.authRoutine = (0, _reduxSagaRoutines.createRoutine)(ty
 var confirmRegistrationRoutine = exports.confirmRegistrationRoutine = (0, _reduxSagaRoutines.createRoutine)(types.CONFIRM);
 var passwordResetRequestRoutine = exports.passwordResetRequestRoutine = (0, _reduxSagaRoutines.createRoutine)(types.PASSWORD_RESET_REQUEST);
 var passwordResetConfirmRoutine = exports.passwordResetConfirmRoutine = (0, _reduxSagaRoutines.createRoutine)(types.PASSWORD_RESET_CONFIRM);
+var resendConfirmationCodeRoutine = exports.resendConfirmationCodeRoutine = (0, _reduxSagaRoutines.createRoutine)(types.RESET_CONFIRMATION_CODE);
 var signInRoutine = exports.signInRoutine = (0, _reduxSagaRoutines.createRoutine)(types.SIGN_IN);
 var signOutRoutine = exports.signOutRoutine = (0, _reduxSagaRoutines.createRoutine)(types.SIGN_OUT);
 var signUpRoutine = exports.signUpRoutine = (0, _reduxSagaRoutines.createRoutine)(types.SIGN_UP);

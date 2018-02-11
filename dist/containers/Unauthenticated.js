@@ -12,9 +12,11 @@ var Component = function Component(_ref) {
     var isLoggedIn = _ref.isLoggedIn,
         loading = _ref.loading,
         children = _ref.children,
+        _ref$loadingComponent = _ref.loadingComponent,
+        loadingComponent = _ref$loadingComponent === undefined ? null : _ref$loadingComponent,
         _ref$component = _ref.component,
         component = _ref$component === undefined ? null : _ref$component;
-    return loading ? null : isLoggedIn ? (0, _helpers.componentOrNull)(component) : children;
+    return loading ? loadingComponent : isLoggedIn ? (0, _helpers.componentOrNull)(component) : children;
 };
 
 exports.default = (0, _reactRedux.connect)(function (state) {

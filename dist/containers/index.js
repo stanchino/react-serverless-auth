@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.Unauthenticated = exports.SignUpForm = exports.SignOutLink = exports.SignInForm = exports.PasswordResetConfirmForm = exports.PasswordResetRequestForm = exports.PasswordResetForm = exports.Protected = exports.ConfirmRegistrationForm = undefined;
+exports.Unauthenticated = exports.SignUpForm = exports.SignOutButton = exports.SignInForm = exports.ResendConfirmationCodeButton = exports.PasswordResetConfirmForm = exports.PasswordResetRequestForm = exports.PasswordResetForm = exports.Protected = exports.ConfirmRegistrationForm = undefined;
 
 var _confirmRegistrationForm = require("./confirmRegistrationForm");
 
@@ -25,13 +25,17 @@ var _PasswordResetConfirmForm = require("./PasswordResetConfirmForm");
 
 var _PasswordResetConfirmForm2 = _interopRequireDefault(_PasswordResetConfirmForm);
 
+var _ResendConfirmationCodeButton = require("./ResendConfirmationCodeButton");
+
+var _ResendConfirmationCodeButton2 = _interopRequireDefault(_ResendConfirmationCodeButton);
+
 var _SignInForm = require("./SignInForm");
 
 var _SignInForm2 = _interopRequireDefault(_SignInForm);
 
-var _SignOutLink = require("./SignOutLink");
+var _SignOutButton = require("./SignOutButton");
 
-var _SignOutLink2 = _interopRequireDefault(_SignOutLink);
+var _SignOutButton2 = _interopRequireDefault(_SignOutButton);
 
 var _SignUpForm = require("./SignUpForm");
 
@@ -48,7 +52,8 @@ exports.Protected = _Protected2.default;
 exports.PasswordResetForm = _PasswordResetForm2.default;
 exports.PasswordResetRequestForm = _PasswordResetRequestForm2.default;
 exports.PasswordResetConfirmForm = _PasswordResetConfirmForm2.default;
+exports.ResendConfirmationCodeButton = _ResendConfirmationCodeButton2.default;
 exports.SignInForm = _SignInForm2.default;
-exports.SignOutLink = _SignOutLink2.default;
+exports.SignOutButton = _SignOutButton2.default;
 exports.SignUpForm = _SignUpForm2.default;
 exports.Unauthenticated = _Unauthenticated2.default;

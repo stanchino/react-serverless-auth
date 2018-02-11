@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.userAttributes = exports.signOutRequest = exports.signUpRequest = exports.signInRequest = exports.passwordResetRequest = exports.passwordResetConfirm = exports.confirmRegistrationRequest = exports.authRequest = undefined;
+exports.userAttributes = exports.signOutRequest = exports.signUpRequest = exports.signInRequest = exports.resendConfirmationCode = exports.passwordResetRequest = exports.passwordResetConfirm = exports.confirmRegistrationRequest = exports.authRequest = undefined;
 
 var _auth = require("./auth");
 
@@ -20,6 +20,10 @@ var _passwordResetRequest2 = _interopRequireDefault(_passwordResetRequest);
 var _passwordResetConfirm = require("./passwordResetConfirm");
 
 var _passwordResetConfirm2 = _interopRequireDefault(_passwordResetConfirm);
+
+var _resendConfirmationCode = require("./resendConfirmationCode");
+
+var _resendConfirmationCode2 = _interopRequireDefault(_resendConfirmationCode);
 
 var _signIn = require("./signIn");
 
@@ -43,6 +47,7 @@ exports.authRequest = _auth2.default;
 exports.confirmRegistrationRequest = _confirmRegistration2.default;
 exports.passwordResetConfirm = _passwordResetConfirm2.default;
 exports.passwordResetRequest = _passwordResetRequest2.default;
+exports.resendConfirmationCode = _resendConfirmationCode2.default;
 exports.signInRequest = _signIn2.default;
 exports.signUpRequest = _signUp2.default;
 exports.signOutRequest = _signOut2.default;

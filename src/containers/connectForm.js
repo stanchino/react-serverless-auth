@@ -4,9 +4,9 @@ import { connect } from "react-redux";
 import { Form } from "../components";
 
 const mapStateToProps = state => ({
-    loading: state.auth.loading,
-    isLoggedIn: state.auth.isLoggedIn,
-    isRegistered: state.auth.isRegistered
+  loading: state.auth.loading,
+  isLoggedIn: state.auth.isLoggedIn,
+  isRegistered: state.auth.isRegistered
 });
 
 export const connectForm = props => (

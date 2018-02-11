@@ -8,6 +8,7 @@ import {
     confirmRegistrationRoutine,
     passwordResetConfirmRoutine,
     passwordResetRequestRoutine,
+    resendConfirmationCodeRoutine,
     signInRoutine,
     signOutRoutine,
     signUpRoutine
@@ -20,6 +21,7 @@ import { handleAuthSaga } from "./auth";
 import { handleSignOutSaga } from "./signOut";
 import { handlePasswordResetRequestSaga } from "./passwordResetRequest";
 import { handlePasswordResetConfirmSaga } from "./passwordResetConfirm";
+import { handleResendConfirmationCodeSaga } from "./resendConfirmationCode";
 
 export function* authWatcher() {
   yield takeEvery(authRoutine.TRIGGER, handleAuthSaga);
@@ -49,6 +51,10 @@ export function* signUpWatcher() {
   yield takeEvery(signUpRoutine.TRIGGER, handleSignUpSaga);
 }
 
+export function* resendConfirmationCodeWatcher() {
+  yield takeEvery(resendConfirmationCodeRoutine.TRIGGER, handleResendConfirmationCodeSaga);
+}
+
 export const formError = (action, errors) => (
     put(action.failure(new SubmissionError(errors)))
 );
@@ -59,6 +65,7 @@ export default [
     confirmRegistrationWatcher,
     passwordResetConfirmWatcher,
     passwordResetRequestWatcher,
+    resendConfirmationCodeWatcher,
     signInWatcher,
     signOutWatcher,
     signUpWatcher,

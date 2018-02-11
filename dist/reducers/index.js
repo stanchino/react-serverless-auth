@@ -38,10 +38,14 @@ var _signUp = require("./signUp");
 
 var _signUp2 = _interopRequireDefault(_signUp);
 
+var _resendConfirmationCode = require("./resendConfirmationCode");
+
+var _resendConfirmationCode2 = _interopRequireDefault(_resendConfirmationCode);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = (0, _redux.combineReducers)({
-  auth: (0, _reduceReducers2.default)(_auth2.default, _confirmRegistration2.default, _passwordReset2.default, _signIn2.default, _signOut2.default, _signUp2.default),
+  auth: (0, _reduceReducers2.default)(_auth2.default, _confirmRegistration2.default, _passwordReset2.default, _signIn2.default, _signOut2.default, _signUp2.default, _resendConfirmationCode2.default),
   form: _reduxForm.reducer,
   router: _reactRouterRedux.routerReducer
 });

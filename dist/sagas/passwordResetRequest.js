@@ -1,18 +1,19 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
-exports.routerSelector = undefined;
-
-var _regenerator = require("babel-runtime/regenerator");
-
-var _regenerator2 = _interopRequireDefault(_regenerator);
+exports.authSelector = exports.routerSelector = undefined;
 
 var _extends2 = require("babel-runtime/helpers/extends");
 
 var _extends3 = _interopRequireDefault(_extends2);
 
+var _regenerator = require("babel-runtime/regenerator");
+
+var _regenerator2 = _interopRequireDefault(_regenerator);
+
+exports.fetchEmail = fetchEmail;
 exports.handlePasswordResetRequestSaga = handlePasswordResetRequestSaga;
 
 var _effects = require("redux-saga/effects");
@@ -29,86 +30,139 @@ var _2 = require(".");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _marked = /*#__PURE__*/_regenerator2.default.mark(handlePasswordResetRequestSaga);
+var _marked = /*#__PURE__*/_regenerator2.default.mark(fetchEmail),
+    _marked2 = /*#__PURE__*/_regenerator2.default.mark(handlePasswordResetRequestSaga);
 
-var routerSelector = exports.routerSelector = function routerSelector(state) {
-    return state.router;
+var email_present = function email_present(hash) {
+  return hash && hash.email;
 };
 
-function handlePasswordResetRequestSaga(_ref) {
-    var values = _ref.payload.values;
+var routerSelector = exports.routerSelector = function routerSelector(state) {
+  return state.router;
+};
+var authSelector = exports.authSelector = function authSelector(state) {
+  return state.auth;
+};
 
-    var email, _ref2, pathname, _ref3, user, data;
+function fetchEmail(values) {
+  var _ref, profile;
 
-    return _regenerator2.default.wrap(function handlePasswordResetRequestSaga$(_context) {
-        while (1) {
-            switch (_context.prev = _context.next) {
-                case 0:
-                    email = values.email;
-                    _context.next = 3;
-                    return (0, _effects.select)(routerSelector);
+  return _regenerator2.default.wrap(function fetchEmail$(_context) {
+    while (1) {
+      switch (_context.prev = _context.next) {
+        case 0:
+          if (!email_present(values)) {
+            _context.next = 4;
+            break;
+          }
 
-                case 3:
-                    _ref2 = _context.sent;
-                    pathname = _ref2.location.pathname;
-                    _context.prev = 5;
-                    _context.next = 8;
-                    return (0, _effects.put)(_actions.passwordResetRequestRoutine.request({ profile: { email: email } }));
+          return _context.abrupt("return", values);
 
-                case 8:
-                    _context.next = 10;
-                    return (0, _effects.call)(_services.passwordResetRequest, email);
+        case 4:
+          _context.next = 6;
+          return (0, _effects.select)(authSelector);
 
-                case 10:
-                    _ref3 = _context.sent;
-                    user = _ref3.user;
-                    data = _ref3.data;
-                    _context.next = 15;
-                    return (0, _effects.put)(_actions.passwordResetRequestRoutine.success((0, _extends3.default)({ user: user }, data)));
+        case 6:
+          _ref = _context.sent;
+          profile = _ref.profile;
+          return _context.abrupt("return", profile);
 
-                case 15:
-                    _context.next = 28;
-                    break;
+        case 9:
+        case "end":
+          return _context.stop();
+      }
+    }
+  }, _marked, this);
+}
 
-                case 17:
-                    _context.prev = 17;
-                    _context.t0 = _context["catch"](5);
+function handlePasswordResetRequestSaga(_ref2) {
+  var values = _ref2.payload.values;
 
-                    if (!("UserNotConfirmedException" === _context.t0.code)) {
-                        _context.next = 26;
-                        break;
-                    }
+  var _ref3, pathname, _ref4, email, _ref5, user, data;
 
-                    _context.next = 22;
-                    return (0, _effects.put)(_actions.signUpRoutine.success({ profile: { email: email }, flash: { error: _context.t0.message }, pathname: pathname }));
+  return _regenerator2.default.wrap(function handlePasswordResetRequestSaga$(_context2) {
+    while (1) {
+      switch (_context2.prev = _context2.next) {
+        case 0:
+          _context2.next = 2;
+          return (0, _effects.select)(routerSelector);
 
-                case 22:
-                    _context.next = 24;
-                    return (0, _effects.put)((0, _reactRouterRedux.replace)(_.authRoutes.confirm));
+        case 2:
+          _ref3 = _context2.sent;
+          pathname = _ref3.location.pathname;
+          _context2.next = 6;
+          return (0, _effects.call)(fetchEmail, values);
 
-                case 24:
-                    _context.next = 28;
-                    break;
+        case 6:
+          _ref4 = _context2.sent;
+          email = _ref4.email;
+          _context2.prev = 8;
+          _context2.next = 11;
+          return (0, _effects.put)(_actions.passwordResetRequestRoutine.request({ profile: { email: email } }));
 
-                case 26:
-                    _context.next = 28;
-                    return (0, _2.formError)(_actions.passwordResetRequestRoutine, {
-                        email: "Invalid user.",
-                        _error: _context.t0.message
-                    });
+        case 11:
+          _context2.next = 13;
+          return (0, _effects.call)(_services.passwordResetRequest, email);
 
-                case 28:
-                    _context.prev = 28;
-                    _context.next = 31;
-                    return (0, _effects.put)(_actions.passwordResetRequestRoutine.fulfill());
+        case 13:
+          _ref5 = _context2.sent;
+          user = _ref5.user;
+          data = _ref5.data;
+          _context2.next = 18;
+          return (0, _effects.put)(_actions.passwordResetRequestRoutine.success((0, _extends3.default)({ user: user }, data)));
 
-                case 31:
-                    return _context.finish(28);
+        case 18:
+          if (email_present(values)) {
+            _context2.next = 21;
+            break;
+          }
 
-                case 32:
-                case "end":
-                    return _context.stop();
-            }
-        }
-    }, _marked, this, [[5, 17, 28, 32]]);
+          _context2.next = 21;
+          return (0, _effects.put)(_actions.resendConfirmationCodeRoutine.success('A new code was sent'));
+
+        case 21:
+          _context2.next = 34;
+          break;
+
+        case 23:
+          _context2.prev = 23;
+          _context2.t0 = _context2["catch"](8);
+
+          if (!("UserNotConfirmedException" === _context2.t0.code)) {
+            _context2.next = 32;
+            break;
+          }
+
+          _context2.next = 28;
+          return (0, _effects.put)(_actions.signUpRoutine.success({ profile: { email: email }, flash: { error: _context2.t0.message }, pathname: pathname }));
+
+        case 28:
+          _context2.next = 30;
+          return (0, _effects.put)((0, _reactRouterRedux.replace)(_.authRoutes.confirm));
+
+        case 30:
+          _context2.next = 34;
+          break;
+
+        case 32:
+          _context2.next = 34;
+          return (0, _2.formError)(_actions.passwordResetRequestRoutine, {
+            email: "Invalid user.",
+            _error: _context2.t0.message
+          });
+
+        case 34:
+          _context2.prev = 34;
+          _context2.next = 37;
+          return (0, _effects.put)(_actions.passwordResetRequestRoutine.fulfill());
+
+        case 37:
+          return _context2.finish(34);
+
+        case 38:
+        case "end":
+          return _context2.stop();
+      }
+    }
+  }, _marked2, this, [[8, 23, 34, 38]]);
 }

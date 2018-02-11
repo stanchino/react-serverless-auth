@@ -32,7 +32,7 @@ var authSelector = exports.authSelector = function authSelector(state) {
 function handleConfirmRegistrationSaga(_ref) {
     var code = _ref.payload.values.code;
 
-    var _ref2, profile, pathname, email, password;
+    var _ref2, _ref2$profile, email, password, pathname;
 
     return _regenerator2.default.wrap(function handleConfirmRegistrationSaga$(_context) {
         while (1) {
@@ -43,46 +43,47 @@ function handleConfirmRegistrationSaga(_ref) {
 
                 case 2:
                     _ref2 = _context.sent;
-                    profile = _ref2.profile;
+                    _ref2$profile = _ref2.profile;
+                    email = _ref2$profile.email;
+                    password = _ref2$profile.password;
                     pathname = _ref2.pathname;
-                    email = profile.email, password = profile.password;
-                    _context.prev = 6;
-                    _context.next = 9;
+                    _context.prev = 7;
+                    _context.next = 10;
                     return (0, _effects.put)(_actions.confirmRegistrationRoutine.request());
 
-                case 9:
-                    _context.next = 11;
+                case 10:
+                    _context.next = 12;
                     return (0, _effects.call)(_services.confirmRegistrationRequest, email, code);
 
-                case 11:
-                    _context.next = 13;
+                case 12:
+                    _context.next = 14;
                     return (0, _effects.put)(_actions.signInRoutine.trigger({ values: { email: email, password: password } }));
 
-                case 13:
-                    _context.next = 15;
+                case 14:
+                    _context.next = 16;
                     return (0, _effects.put)((0, _reactRouterRedux.replace)(pathname));
 
-                case 15:
-                    _context.next = 23;
+                case 16:
+                    _context.next = 24;
                     break;
 
-                case 17:
-                    _context.prev = 17;
-                    _context.t0 = _context["catch"](6);
-                    _context.next = 21;
+                case 18:
+                    _context.prev = 18;
+                    _context.t0 = _context["catch"](7);
+                    _context.next = 22;
                     return (0, _.formError)(_actions.confirmRegistrationRoutine, {
                         code: "Invalid code",
                         _error: _context.t0.message
                     });
 
-                case 21:
-                    _context.next = 23;
+                case 22:
+                    _context.next = 24;
                     return (0, _effects.put)(_actions.confirmRegistrationRoutine.fulfill());
 
-                case 23:
+                case 24:
                 case "end":
                     return _context.stop();
             }
         }
-    }, _marked, this, [[6, 17]]);
+    }, _marked, this, [[7, 18]]);
 }

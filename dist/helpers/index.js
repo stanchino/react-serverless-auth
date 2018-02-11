@@ -27,5 +27,6 @@ var elementOrCreate = function elementOrCreate(_ref) {
 
 exports.elementOrCreate = elementOrCreate;
 var componentOrNull = exports.componentOrNull = function componentOrNull(component) {
-    return component ? _react2.default.createElement(component) : null;
+    var props = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+    return component ? elementOrCreate((0, _extends3.default)({ component: component }, props)) : null;
 };

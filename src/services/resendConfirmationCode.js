@@ -1,8 +1,8 @@
 import { cognitoUser } from "./utils";
 
-export default (email, code) => (
+export default (email) => (
   new Promise((resolve, reject) => {
-    cognitoUser(email).confirmRegistration(code, false, (err, result) => {
+    cognitoUser(email).resendConfirmationCode((err, result) => {
       if (err) {
         reject(err)
       } else {

@@ -20,8 +20,9 @@ import {
   PasswordResetForm,
   PasswordResetRequestForm,
   PasswordResetConfirmForm,
+  ResendConfirmationCodeButton,
   SignInForm,
-  SignOutLink,
+  SignOutButton,
   SignUpForm,
   Unauthenticated
 } from "./containers";
@@ -48,8 +49,9 @@ export {
   PasswordResetForm,
   PasswordResetRequestForm,
   PasswordResetConfirmForm,
+  ResendConfirmationCodeButton,
   SignInForm,
-  SignOutLink,
+  SignOutButton,
   SignUpForm,
   Unauthenticated
 }

@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Unauthenticated = exports.SignUpForm = exports.SignOutLink = exports.SignInForm = exports.PasswordResetConfirmForm = exports.PasswordResetRequestForm = exports.PasswordResetForm = exports.Protected = exports.ConfirmRegistrationForm = exports.SubmitButton = exports.ResetButton = exports.PasswordConfirmation = exports.Password = exports.Messages = exports.FormField = exports.Form = exports.Email = exports.ConfirmationCode = exports.ActionButton = exports.authRoutes = exports.authMiddleware = exports.authSagas = exports.authReducer = undefined;
+exports.Unauthenticated = exports.SignUpForm = exports.SignOutButton = exports.SignInForm = exports.ResendConfirmationCodeButton = exports.PasswordResetConfirmForm = exports.PasswordResetRequestForm = exports.PasswordResetForm = exports.Protected = exports.ConfirmRegistrationForm = exports.SubmitButton = exports.ResetButton = exports.PasswordConfirmation = exports.Password = exports.Messages = exports.FormField = exports.Form = exports.Email = exports.ConfirmationCode = exports.ActionButton = exports.authRoutes = exports.authMiddleware = exports.authSagas = exports.authReducer = undefined;
 
 var _sagas = require("./sagas");
 
@@ -46,7 +46,8 @@ exports.Protected = _containers.Protected;
 exports.PasswordResetForm = _containers.PasswordResetForm;
 exports.PasswordResetRequestForm = _containers.PasswordResetRequestForm;
 exports.PasswordResetConfirmForm = _containers.PasswordResetConfirmForm;
+exports.ResendConfirmationCodeButton = _containers.ResendConfirmationCodeButton;
 exports.SignInForm = _containers.SignInForm;
-exports.SignOutLink = _containers.SignOutLink;
+exports.SignOutButton = _containers.SignOutButton;
 exports.SignUpForm = _containers.SignUpForm;
 exports.Unauthenticated = _containers.Unauthenticated;

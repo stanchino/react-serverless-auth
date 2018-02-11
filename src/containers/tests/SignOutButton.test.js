@@ -3,13 +3,13 @@ import { Provider } from "react-redux";
 import { mount } from "enzyme";
 import configureStore from "redux-mock-store";
 
-import { SignOutLink } from "..";
+import { SignOutButton } from "..";
 
 const mockStore = configureStore();
 const store = state => mockStore(state);
 
-describe("SignOutLink Component", () => {
-    const expectButton = store => (expect(mount(<Provider store={store}><SignOutLink /></Provider>).find("button")));
+describe("SignOutButton Component", () => {
+    const expectButton = store => (expect(mount(<Provider store={store}><SignOutButton /></Provider>).find("button")));
     it("while page is loading", () => {
         const state = { auth: { loading: true } };
         expectButton(store(state)).toBeEmpty();

@@ -2,6 +2,7 @@ import authRequest from "./auth";
 import confirmRegistrationRequest from "./confirmRegistration";
 import passwordResetRequest from "./passwordResetRequest";
 import passwordResetConfirm from "./passwordResetConfirm";
+import resendConfirmationCode from "./resendConfirmationCode";
 import signInRequest from "./signIn";
 import signOutRequest from "./signOut";
 import signUpRequest from "./signUp";
@@ -12,6 +13,7 @@ export {
     confirmRegistrationRequest,
     passwordResetConfirm,
     passwordResetRequest,
+    resendConfirmationCode,
     signInRequest,
     signUpRequest,
     signOutRequest,
